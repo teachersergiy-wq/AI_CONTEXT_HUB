@@ -5,17 +5,32 @@
 - GitHub: `teachersergiy-wq/mustang`
 - Branch: `main`
 
-## Active directions
+## Verified current structure
 
-- AI
-- record/rating logic
+- `index.html` — web application entry point
+- `css/` — styles
+- `js/` — game logic/config
+- `apps_script/` — Google Apps Script integration
+
+## Verified README capabilities
+
+- Browser game
+- Local AI
+- Mobile interface
+- Device records in localStorage
+- World records through Google Apps Script / Google Sheets
+
+## Active development directions
+
+- AI quality and learning
+- rating/record comparison
 - game analysis and saving
-- mobile web version
+- mobile UX
 
-## Current task
+## Important distinction
 
-Keep this file synchronized with the actual repository after each significant development step.
+The repository is already a web version. A future task may still extend or replace parts of the web implementation, but "convert Python to web" is not the current repository state.
 
-## Known issues
+## Next context-maintenance step
 
-Do not copy historical chat issues here unless they are confirmed in the current code.
+Keep this file synchronized with the actual repository after significant changes.
