@@ -3,13 +3,18 @@
 | Slug | Project | GitHub | Status |
 |---|---|---|---|
 | mustang | Mustang | teachersergiy-wq/mustang | active |
-| school-webapp | Rozklad / School WebApp | teachersergiy-wq/Rozklad | active |
+| tutor-schedule | Tutor Schedule | teachersergiy-wq/Rozklad | active |
 | school-attendance | School Attendance / Meals | not connected | active-planning |
 
 ## Project distinction
 
-- `school-webapp` = verified current `Rozklad` scheduling/lesson-management application.
-- `school-attendance` = separate attendance/meal automation project whose final repository is not yet connected.
+- `mustang` = Mustang browser game and AI.
+- `tutor-schedule` = private tutoring schedule, lessons, students, bookings, payments and reports in `teachersergiy-wq/Rozklad`.
+- `school-attendance` = separate school attendance/meal automation project. Its final application repository is not yet connected.
+
+## Important rule
+
+Never classify the Tutor Schedule project as the school attendance/meal system.
 
 ## Adding a project
 
