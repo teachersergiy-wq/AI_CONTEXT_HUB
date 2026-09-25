@@ -2,16 +2,19 @@
 
 ## Current
 
-- [ ] Keep CURRENT_STATE synchronized with the repository.
-- [ ] Consolidate durable gameplay decisions from older discussions.
-- [ ] Verify which historical AI/UX requirements are already implemented.
+- [ ] Test `mobile_v21` on Android Chrome and iPhone Safari.
+- [ ] Compare `mobile_v21` feature-by-feature with `mustang_gui.21_ai.py`.
+- [ ] Verify campaign continuation, save/continue and replay on a real mobile device.
+- [ ] Verify world-record submission from `mobile_v21`.
 
 ## Next
 
-- [ ] Link the complete set of Mustang context documents in Supabase.
-- [ ] Define a stable public context document set.
-- [ ] Add automated GitHub → Supabase synchronization.
+- [ ] Decide whether `mobile_v21` should replace the root web version after testing.
+- [ ] Add any missing Python-era record filters and campaign record views.
+- [ ] Consider moving persistent campaign progress from localStorage to Supabase for cross-device continuation.
+- [ ] Improve AI learning from played games.
 
 ## Later
 
+- [ ] Add automated GitHub → Supabase synchronization.
 - [ ] Add automated cross-AI handoff logging.
