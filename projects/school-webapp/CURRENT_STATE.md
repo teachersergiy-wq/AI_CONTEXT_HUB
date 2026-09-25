@@ -1,22 +1,36 @@
-# School WebApp — CURRENT_STATE
+# Rozklad / School WebApp — CURRENT_STATE
 
 ## Repository
 
 - GitHub: `teachersergiy-wq/Rozklad`
 - Branch: `main`
 
-## Active directions
+## Verified current files
 
-- attendance
-- meals
-- academic records
-- reports
-- mobile-first UI
+- `index.html`
+- `app.js`
+- `student-schedule.html`
+- `student-schedule.js`
+- `style.css`
 
-## Database
+## Verified implementation areas
 
-Supabase is used for the application's central database.
+- schedule calendar;
+- lessons;
+- students;
+- student links;
+- payments;
+- reports;
+- booking requests;
+- audit log;
+- backups;
+- mobile UI;
+- Supabase client integration.
 
-## Current task
+## Broader planned school system
 
-Keep this file synchronized with the actual application code and database after each significant step.
+Attendance, meals and school-wide reporting are a broader project direction and should be kept separate from verified features of this repository until confirmed.
+
+## Next step
+
+Create a dedicated `school-attendance` Context Hub project when the attendance/meal application is ready to be connected to its actual repository and database.
