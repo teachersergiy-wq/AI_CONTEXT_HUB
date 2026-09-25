@@ -7,30 +7,48 @@
 
 ## Verified current structure
 
-- `index.html` — web application entry point
+- `index.html` — current mobile-first web application
 - `css/` — styles
-- `js/` — game logic/config
+- `js/` — game logic, AI, records and configuration
 - `apps_script/` — Google Apps Script integration
+- `mobile_v21/` — separate mobile port based on `mustang_gui.21_ai.py`
 
-## Verified README capabilities
+## Verified capabilities
 
+### Root web version
 - Browser game
-- Local AI
+- Local AI for the knight
 - Mobile interface
 - Device records in localStorage
 - World records through Google Apps Script / Google Sheets
+- Pause / save / continue
+- Undo
+- Move notation and replay
+- Campaigns
+
+### mobile_v21 port
+- Source: `mustang_gui.21_ai.py`
+- Mobile-first responsive interface
+- Quick game levels 32 / 24 / 16 / 14 / 12 and custom 1–32
+- GPT#1–GPT#20 automatic bishop series
+- CycleGuard 2–5 for automatic play
+- Pause, save, continue and undo confirmation
+- Move notation and replay
+- Local/world records
+- Three campaign types with local name/password progress
+- Landscape phone layout
+
+### Important implementation note
+
+`mobile_v21` is intentionally separate from the existing root web version so the established deployment is not broken while feature parity is developed and tested.
+
+GitHub Pages path:
+`/mustang/mobile_v21/`
 
 ## Active development directions
 
-- AI quality and learning
-- rating/record comparison
-- game analysis and saving
-- mobile UX
-
-## Important distinction
-
-The repository is already a web version. A future task may still extend or replace parts of the web implementation, but "convert Python to web" is not the current repository state.
-
-## Next context-maintenance step
-
-Keep this file synchronized with the actual repository after significant changes.
+- Verify mobile_v21 gameplay on real phones
+- Bring any missing historical gameplay rules from the Python version into the web port
+- Improve AI quality and learning
+- Improve record/rating comparison
+- Keep this file synchronized with actual repository state
