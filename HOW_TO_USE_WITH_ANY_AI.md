@@ -18,8 +18,11 @@ Current projects:
 - `mustang` — browser/mobile game; GitHub: `teachersergiy-wq/mustang`
 - `tutor-schedule` — private tutor scheduling/lesson-management application; GitHub: `teachersergiy-wq/Rozklad`
 - `school-attendance` — school attendance/meal project; GitHub repository is not yet connected
+- `school-gradebook` — school gradebook / class journal; source repository is not yet connected
+- `math-assessment` — mathematics assessment content and Quizizz/Wayground workflow; source repository is not yet connected
 
 Never confuse `tutor-schedule` with `school-attendance`.
+Never confuse `school-gradebook` with `school-attendance`: the former is the gradebook/assessment-record application, while the latter is attendance/meals/reporting.
 
 ## Rule 2 — Read context before work
 
@@ -140,6 +143,8 @@ Examples:
 - `...?project=mustang&format=markdown`
 - `...?project=tutor-schedule&format=markdown`
 - `...?project=school-attendance&format=markdown`
+- `...?project=school-gradebook&format=markdown`
+- `...?project=math-assessment&format=markdown`
 
 The current public API is READ-ONLY. It is not a universal write endpoint.
 
