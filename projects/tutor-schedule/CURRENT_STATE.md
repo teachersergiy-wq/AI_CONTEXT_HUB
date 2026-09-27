@@ -10,8 +10,8 @@
 - Active development branch: gpt/v2-tz-2026-09-19
 - Pull Request: teachersergiy-wq/Rozklad#1
 - PR state: open, not merged
-- Current PR head: e48ecead5cea04394d1df01ca5b61ba6632ba405
-- Current PR mergeable flag: false
+- Current PR head: 6afc45471f472b2cc38137cc4452b166f7ca7f90
+- The previously failed UI-206.4 attempt was removed from the unmerged branch; the current head contains the corrected UI-206.4 implementation.
 - Final cutover: not performed
 - r0zklad: unchanged except the explicitly authorized student-link redirect in student-schedule.js
 - public.schedules: not modified
@@ -40,19 +40,24 @@ Implemented and statically verified:
 - Authorized legacy r0zklad student-link redirect.
 - Student self-cancel counter/action and teacher persistent notification panel.
 
-## 2026-09-27 UI polish — VERIFIED / STATIC QA
-- Student information bar text updated to concise Kyiv-time and communication wording; pills stay on one line on mobile.
-- Student sections Проведені уроки / Заплановані уроки / Запити на розгляді are arranged as one compact row; pending requests open from their tab; Поточний період is above the period navigation arrows.
-- Teacher and student Month headers use a compact single-row layout on landscape mobile; the existing non-landscape/two-row layouts remain available outside the scoped media query.
+## 2026-09-27 UI polish and UI-206 — VERIFIED / STATIC QA
+- Student information bar text uses concise Kyiv-time and communication wording.
+- Student sections Проведені уроки / Заплановані уроки / Запити на розгляді are compacted into one row.
+- Only one visible “Запити на розгляді” entry remains in the student section row; the separate duplicate header counter was removed. The pending-request entry is hidden when there are no pending requests.
+- The debt notice remains conditional: it is hidden when there are no unpaid completed lessons and shown only when unpaid completed lessons exist.
+- “Поточний період” is placed directly before the period navigation arrows in the student navigation row.
+- The student “Заплановані уроки” list is now loaded independently from the selected calendar Week/Month/Year range, using a broad date window, so the list does not depend on the period currently displayed.
+- Teacher Day/Week lesson cards and Month lesson badges bold the time and student name when the lesson is fully completed: non-empty topic other than “-”, non-empty homework (including “-”), status completed, paid=true and a payment amount is present.
+- Teacher and student Month headers retain the compact single-row landscape layout from the earlier UI polish.
 
 ## QA limits
-- JavaScript syntax checks: PASS.
-- Static repository checks: PASS.
+- JavaScript syntax checks for app.js and student-schedule.js: PASS after UI-206 correction.
+- Static DOM/CSS/logic checks for UI-206.1 through UI-206.4: PASS.
 - Targeted Supabase transaction tests for self-cancel and notifications: PASS.
 - Live browser/mobile/device QA is still a human verification step.
 
 ## Release gates
-- Live QA of the accumulated UI changes, including the 2026-09-27 polish, is still required.
+- Live QA of the accumulated UI changes, including UI-206.1 through UI-206.4, is still required.
 - One live authorized legacy-link redirect test remains required.
 - Supabase Auth Leaked Password Protection must be enabled manually in Dashboard.
 - Final clean resync from legacy must happen immediately before deployment.
