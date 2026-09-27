@@ -1,20 +1,13 @@
 # School Attendance — PROJECT_CONTEXT
 
 ## Purpose
-
 Mobile-first school web application for daily attendance, meal ordering/reporting and future academic records.
 
-## Current status
+## Project boundary
+This is a separate project from teachersergiy-wq/Rozklad / Tutor Schedule. Its implementation repository is not yet connected to the Hub, so requirements must not be described as verified code.
 
-This is a separate project from `teachersergiy-wq/Rozklad`.
-
-Its application repository is not yet connected to AI_CONTEXT_HUB, so implementation details must be treated as project requirements rather than verified code features.
-
-## Core workflow
-
-Teachers should be able to submit information from a phone with large controls.
-
-The system should support:
+## Core workflow discussed in prior chats
+Teachers should be able to submit information from a phone with large controls. The system should support:
 - grades 1–11, with grade 10 explicitly excluded from the attendance workflow;
 - identifying present/absent students by surname;
 - submission by the homeroom teacher or the teacher whose first lesson is in that class;
@@ -23,27 +16,18 @@ The system should support:
 - kitchen-facing meal reports;
 - administration reports.
 
-## Data requirements
+## Data requirements discussed
+Attendance data should support historical retention and filtering/reporting by day, class, student, month, school year, missed lessons, student-days (дитодні) and school attendance percentage.
+The academic record model should support lesson numbers 1–8, subject/type and grades/marks.
 
-The attendance database should retain student attendance for all school days and support future filtering/reporting by:
-- day;
-- class;
-- student;
-- month;
-- school year;
-- missed lessons;
-- student-days (дитодні);
-- school attendance percentage.
+## Historical school-journal/database discussions — PLANNED / UNVERIFIED
+Earlier chats explored the foundation for a school class journal, including Excel/Access 2010 and multi-table database design. Those discussions are useful historical requirements but are not the final production schema.
 
-The academic record model also needs:
-- lesson number 1–8;
-- subject/type;
-- grade/mark.
+## Related workstream boundary
+A Python School Gradebook / Class Journal workstream also exists in prior chats and is a candidate for separate project treatment. It has not been created as a separate Hub project; no details from it should be silently promoted to this project.
 
-## Planned technical direction
-
-Earlier development used Google Sheets + Apps Script for a free mobile web application. The long-term AI_CONTEXT_HUB architecture uses Supabase for structured context, while the actual application backend should be documented separately once the final implementation is chosen.
+## Technical direction
+Earlier work used Google Sheets + Apps Script as a free mobile-web direction. Long-term context infrastructure uses Supabase, but the actual application backend remains unverified until the real repository/database are connected.
 
 ## Important rule
-
-Do not mix this project's requirements with the verified implementation of `teachersergiy-wq/Rozklad`.
+Do not mix this project's requirements with the verified implementation of Tutor Schedule / Rozklad.
