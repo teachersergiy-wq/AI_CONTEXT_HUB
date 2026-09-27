@@ -3,9 +3,9 @@
 **Status:** PARTIAL / HISTORICAL  
 **Last updated:** 2026-09-27
 
-## VERIFIED
+## VERIFIED FROM PRIOR WORK
 
-From prior user work, the project has been defined conceptually and a Python GUI implementation was developed during earlier conversations.
+The project was conceptually defined and a Python GUI implementation was developed during earlier conversations.
 
 Known requirements:
 - Python desktop gradebook;
@@ -18,9 +18,19 @@ Known requirements:
 - lesson editing/deletion;
 - context menu requirement.
 
+The earlier work included staged development and a `journal_gui.py` file; an “Етап 9” stage was explicitly referenced.
+
+## HISTORICAL REPORTED PROBLEMS
+
+The last reported GUI problems in the available chat context were:
+- header not split into the intended separate rows;
+- lesson edit/delete unavailable;
+- no context menu.
+
+Because the current repository is not connected, these cannot be asserted as current bugs.
+
 ## NOT VERIFIED
 
-The following are not currently verified against a connected source repository:
 - current source code state;
 - current Git branch or commit;
 - production database;
@@ -29,22 +39,6 @@ The following are not currently verified against a connected source repository:
 - deployment state;
 - final UI behavior.
 
-## Known historical issue state
-
-Earlier development included unresolved GUI problems reported by the user:
-1. header was not split into separate rows as intended;
-2. lessons could not be edited or deleted;
-3. no context menu was available.
-
-These historical issues must not be treated as still present without checking the current source.
-
 ## Current blocker
 
 A production repository/source baseline has not yet been connected or verified for this Hub record.
-
-## Interpretation labels
-
-- VERIFIED — confirmed by current source/test.
-- PLANNED — requested but not implemented/verified.
-- PARTIAL — some work exists, but current state is incomplete or unverified.
-- BLOCKED — cannot proceed without required source/access information.
