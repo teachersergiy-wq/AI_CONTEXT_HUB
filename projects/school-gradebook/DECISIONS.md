@@ -19,3 +19,7 @@ No implementation claim is considered current without source/test verification.
 ## Future architecture rule
 
 The definitive persistence architecture, student/lesson/assessment schema and Android strategy must be based on the actual project source and/or database once connected, not inferred from historical chat text.
+
+## 2026-09-27 — Historical implementation reference
+
+The `journal_gui.py` / “Етап 9” trail is preserved as a locator for future source recovery, not as a claim that this exact version is current.
