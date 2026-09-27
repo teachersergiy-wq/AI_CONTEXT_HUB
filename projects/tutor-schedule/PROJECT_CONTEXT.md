@@ -1,43 +1,30 @@
 # Tutor Schedule — PROJECT_CONTEXT
 
 ## Purpose
-
 A scheduling and lesson-management application for private tutoring.
 
 ## Repository
-
 https://github.com/teachersergiy-wq/Rozklad
 
+## Legacy repository
+https://github.com/teachersergiy-wq/r0zklad is the legacy working application and must remain separate from the V2 target until explicit human cutover.
+
 ## Verified current functionality
+The current V2 browser application includes calendar views, weekly/monthly/year navigation, lesson CRUD, student management, student personal token links, planned/completed lessons, payment status/details, lesson topics/homework, repeated lessons, booking/reschedule requests, reports, issue checking, audit/change log, backups, editing restrictions, mobile-responsive UI, dark theme and Supabase integration.
 
-The current repository is a browser application with:
+## Historical project context from prior chats
+The project evolved from the user's earlier need for a school/tutor schedule and grade-management workflow. Durable requirements discussed over time include:
+- clear date-based lesson scheduling;
+- student-specific links;
+- payment and lesson-history tracking;
+- mobile access for students;
+- teacher-side management and reports;
+- migration from the old key-based application to a secure V2.
 
-- calendar views;
-- weekly and monthly schedule navigation;
-- lesson creation and editing;
-- student management;
-- student personal/public links;
-- planned and completed lessons;
-- payment status and payment details;
-- lesson topics and homework;
-- repeated weekly lessons;
-- booking requests;
-- reports;
-- issue/error checking;
-- audit/change log;
-- backups;
-- editing mode with access restrictions;
-- mobile-responsive UI;
-- dark theme;
-- Supabase JavaScript client.
+The project must not be confused with the separate School Attendance / Meals project.
 
-## Important distinction
-
-This is a **private tutoring** project, not a school attendance/meal system.
-
-The school attendance and meal application is a separate project:
-`school-attendance`.
+## Current migration boundary — VERIFIED / HUMAN CONTROLLED
+r0zklad remains the legacy working system. Rozklad V2 is the target. Final data resync, PR merge and production cutover require explicit human approval.
 
 ## Development rule
-
-Keep verified implementation facts separate from ideas discussed in older chats.
+Keep verified repository/database facts separate from historical ideas. Never modify legacy r0zklad/public.schedules outside an explicitly authorized exception.
