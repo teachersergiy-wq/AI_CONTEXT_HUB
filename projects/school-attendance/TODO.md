@@ -13,7 +13,8 @@
 - [ ] Define the public/private context documents.
 
 ## Related project boundary
-- [ ] Await human decision on whether the historical School Gradebook / Class Journal workstream should become a separate Hub project.
+The former School Gradebook / Class Journal workstream is now an independent project:
+`projects/school-gradebook/`.
 
 ## Later
 - [ ] Automated GitHub ↔ Supabase context synchronization.
