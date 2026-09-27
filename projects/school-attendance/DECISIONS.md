@@ -10,7 +10,10 @@ Decision: earlier Excel/Access and Google Sheets/Apps Script designs are histori
 Reason: the actual repository and production schema are not yet verified.
 Status: active
 
-## 2026-09-27 — Context consolidation
-Decision: preserve the school class-journal/gradebook history as related but potentially separate context until the user approves a dedicated project boundary.
-Reason: grading/assessment has a different product workflow from attendance/meals.
-Status: awaiting project-separation approval.
+## 2026-09-27 — School Gradebook separation approved
+Decision: the historical School Gradebook / Class Journal workstream is now a separate official AI_CONTEXT_HUB project: `projects/school-gradebook/`.
+Reason: grading/assessment application workflow is distinct from attendance/meals.
+Status: active
+
+## Boundary rule
+Do not move gradebook requirements into School Attendance merely because both concern school records. Cross-reference the separate project instead.
