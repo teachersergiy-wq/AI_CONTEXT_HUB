@@ -22,9 +22,16 @@
 
 ## 2026-09-27 — UI polish
 - Student information bar was shortened and constrained to a single mobile row.
-- Проведені уроки / Заплановані уроки / Запити на розгляді were compacted into one row; pending requests became an expandable section and Поточний період moved above period arrows.
+- Проведені уроки / Заплановані уроки / Запити на розгляді were compacted into one row; pending requests became an expandable section and the previous period-label placement was later superseded by live testing.
 - Teacher and student Month headers were compacted to a single row on landscape mobile.
-- Static QA passed for syntax and the new responsive selectors; live browser/mobile QA remains pending.
+
+## 2026-09-27 — UI-206
+- Removed the duplicate student pending-request header counter; the pending-request section-row entry is now conditional on there being at least one pending request.
+- Kept debt information conditional on unpaid completed lessons only.
+- Moved “Поточний період” directly before the student period-navigation arrows.
+- Decoupled the student planned-lessons list from the currently displayed calendar period by loading planned lessons over a broad independent range.
+- Added teacher Day/Week/Month bolding for fully completed lessons when all specified topic/homework/completed/paid/amount conditions are met.
+- Static QA passed after correcting the unmerged UI-206.4 attempt; live browser/mobile QA remains pending.
 
 ## Current release gate
 - PR #1 remains open and unmerged.
