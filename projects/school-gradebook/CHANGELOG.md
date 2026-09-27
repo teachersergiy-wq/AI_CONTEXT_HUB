@@ -3,7 +3,6 @@
 ## 2026-09-27
 
 ### Project record created
-
 Created a dedicated AI_CONTEXT_HUB project record after explicit user approval.
 
 Recorded historical requirements:
@@ -15,4 +14,5 @@ Recorded historical requirements:
 - subject management;
 - lesson edit/delete and context-menu requirements.
 
-The current implementation/repository remains unverified and is not presented as production truth.
+### Audit refinement
+Added the historical `journal_gui.py` / “Етап 9” development reference and the three last reported GUI problems. These remain historical until the current source is connected and verified.
