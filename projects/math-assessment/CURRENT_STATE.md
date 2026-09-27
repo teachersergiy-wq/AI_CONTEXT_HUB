@@ -6,20 +6,25 @@
 ## VERIFIED FROM PRIOR WORK
 
 The project requirements include:
-- large mathematics question banks;
-- Excel-based import workflows;
-- random subset selection;
+- Excel import workflows for Quizizz/Wayground;
+- large mathematics question banks, including 100- and 1000-question requests;
+- random subset selection such as 10 or 20 questions from a larger bank;
 - mobile student participation;
 - automatic grading;
 - five answer options;
-- plausible distractors;
+- plausible distractors tied to common misconceptions;
 - rational-number addition/subtraction;
 - practical-content word problems involving construction of mathematical expressions;
 - six requested practical-task categories.
 
+## HISTORICAL CONTENT DESIGN
+
+The rational-number bank used a concrete distractor pattern based on `-2+3=` and common sign/absolute-value errors.
+
+The practical-word-problem request specified 100 varied tasks with five expression-based answer choices and an even distribution among geometric, physical, quantitative, financial, work and household contexts.
+
 ## NOT VERIFIED
 
-The following are not currently verified against a connected source repository or live platform configuration:
 - current Quizizz/Wayground import schema;
 - current question-bank files;
 - exact current number of stored questions;
@@ -31,7 +36,3 @@ The following are not currently verified against a connected source repository o
 ## Current source baseline
 
 No dedicated project repository is currently connected and verified in AI_CONTEXT_HUB.
-
-## Status interpretation
-
-The project definition is durable, but the implementation/content inventory is historical until current files or platform configuration are inspected.
