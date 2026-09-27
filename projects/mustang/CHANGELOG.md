@@ -17,3 +17,6 @@ The existing root web version remains unchanged; v21 is isolated for testing bef
 ## 2026-09-27 — Context consolidation
 - Added historical context covering Mustang statistics/database planning, AI-algorithm comparison, Python/Codex development discussions and Apps Script/web-publication topics.
 - Historical items are explicitly separated from repository-verified functionality.
+
+## 2026-09-27 — Audit refinement
+- Recorded the exact historical filenames used for the four-algorithm automatic-move comparison.
