@@ -12,6 +12,7 @@
 - [ ] Review subject management.
 - [ ] Verify attendance marker `н`.
 - [ ] Verify assessment categories including ГР1/ГР2/ГР3, independent work, homework and control work.
+- [ ] Verify the `journal_gui.py` / “Етап 9” state if that source is located.
 - [ ] Define a stable data model for students, lessons, subjects and assessments.
 - [ ] Decide and document the Android delivery strategy after the desktop baseline is verified.
 
