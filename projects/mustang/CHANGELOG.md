@@ -1,5 +1,16 @@
 # Mustang — CHANGELOG
 
+## 2026-09-30 — Python desktop context from Grok chat
+
+### Documented (PARTIAL relative to web repo)
+- Desktop Tkinter feature set: notation (paired full moves), TOP25 time/moves/balance, campaigns (summit/steps2026/marathon), world Sheet sync, parity Score combined TOP100, Guest vs Player, stats panel, splash/login, minimax knight AI.
+- Product rules: Guest excluded from world ranking and personal stats; registered player optional profile sync via Apps Script actions.
+- Ops notes: world refresh should run off UI thread; modular `mustang_pkg` startup pitfalls (`ui` package, `APP_DIR`).
+- Explicit decision: one Hub project `mustang` for web + desktop streams.
+
+### Not claimed VERIFIED in GitHub web tree
+- Specific desktop filenames and Sheet automation remain chat/workspace artifacts until merged and tested in `teachersergiy-wq/mustang`.
+
 ## 2026-09-25
 
 ### Added
