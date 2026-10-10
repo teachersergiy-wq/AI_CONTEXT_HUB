@@ -3,7 +3,10 @@
 ## Current
 - [x] Obtain user approval to register a dedicated project.
 - [x] Create this Hub context folder with the standard documents.
-- [ ] Finish registry/proposal synchronization and Supabase context record; verify the public context API.
+- [x] Update PROJECTS.md and mark the proposal approved.
+- [x] Register the matching Supabase `ai_projects` row, five `ai_documents` rows and five `ai_project_sources` rows.
+- [x] Query `ai_public_context` and verify it returns all five documents.
+- [ ] Verify the public Edge Function's actual HTTP response from a browser or another network-capable environment.
 - [ ] Keep application implementation status marked PLANNED until code is committed and tested.
 
 ## Next
