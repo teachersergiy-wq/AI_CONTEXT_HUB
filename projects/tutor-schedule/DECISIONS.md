@@ -48,5 +48,11 @@ Decision: prototype-specific slot display, time picker, colors and reported bugs
 Reason: Tutor Schedule evolved from the early calendar prototype into a more feature-rich V2 application.
 Status: active.
 
+## 2026-10-10 — Broader original tutor-CRM scope is historical context
+Decision: preserve the initial Mathema import, extra-lesson, student-card, parent/student-link, attachment/homework, and architecture-exploration requirements in PROJECT_CONTEXT.md, labeled historical/planned unless verified in V2.
+Decision: free/24×7 availability remains a user constraint to evaluate, not a guaranteed property of any free hosting plan.
+Reason: retain durable design history without conflating it with verified current application behavior.
+Status: active.
+
 ## QA boundary
 Decision: static checks and transactional DB tests can be verified automatically here; live browser/device behavior must be treated as human verification when unavailable.
