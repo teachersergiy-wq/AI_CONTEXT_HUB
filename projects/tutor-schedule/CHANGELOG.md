@@ -1,5 +1,12 @@
 # Tutor Schedule — CHANGELOG
 
+## 2026-10-10 — Broader historical tutor-CRM context
+- Added the original broader scope: Mathema schedule source, manual/CSV/screenshot import options, additional private lessons, student cards, parent/student links, lesson history, homework/attachments and mobile access.
+- Recorded the previously explored Google Sheets/AppSheet, Baserow, self-hosted NocoDB, Supabase + React/Vite, and Cloudflare options as historical architecture exploration, not a current implementation decision.
+- Reiterated that “free and available 24/7” is a constraint to verify and not a guaranteed free-tier SLA.
+- Synchronized PROJECT_CONTEXT.md, CURRENT_STATE.md and DECISIONS.md; current V2 implementation facts and release gates remain unchanged.
+- No application source code, database, pull request, branch or deployment was changed.
+
 ## 2026-10-10 — Historical prototype context consolidation
 - Preserved the earlier calendar-prototype requirements in PROJECT_CONTEXT.md: evening slots, click-to-assign student flow, slot states/colors, payment marker, time-picker constraints, day timeline, cloud-link requirement and historical UI bugs.
 - Explicitly labeled them historical so they do not override the verified V2 application or become assumed current bugs.
