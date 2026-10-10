@@ -62,7 +62,7 @@ This is a standalone mobile-first learning application: students enter using tea
 - Strict preference for free components available continuously. This is a design constraint, not a guarantee that free plans provide uninterrupted 24/7 service; quotas, idle suspension and policy changes must be checked.
 
 ### Current status
-**PLANNED / NOT IMPLEMENTED.** The dedicated Hub record exists, but no dedicated source repository, application schema or working application implementation has been verified. A matching record is to be registered in the existing context registry; the production application should use a separate Supabase project/database and must not be mixed into the current `tutor-calendar` project.
+**PLANNED / NOT IMPLEMENTED.** The dedicated Hub record and its matching public context-registry records (`ai_projects`, five `ai_documents` and five `ai_project_sources`) are registered. No dedicated source repository, operational application schema or working application implementation has been verified. The production application should use a separate Supabase project/database and must not be mixed into the current `tutor-calendar` project.
 
 ---
 
