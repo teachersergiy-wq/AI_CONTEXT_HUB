@@ -7,6 +7,7 @@
 - User approved a dedicated project record in AI_CONTEXT_HUB on 2026-10-10.
 - The purpose and durable requirements are documented in PROJECT_CONTEXT.md.
 - This is a context/requirements milestone, not a working application release.
+- The Hub registry was updated and the matching Supabase `ai_projects` record was created.
 
 ## Frontend
 - No dedicated application repository or frontend has been created/verified.
@@ -21,6 +22,7 @@
 - No dedicated operational database/schema has been created or verified for this app.
 - The existing Supabase project `tutor-calendar` contains the AI_CONTEXT_HUB registry and Tutor Schedule tables; do not put multiplication app data there.
 - A dedicated Supabase app project requires separate review before creation.
+- In the existing context registry, an `ai_projects` row, five public `ai_documents` rows and five GitHub source references were created for this Hub record.
 
 ## Authentication
 - Required student flow: teacher-issued code + password.
@@ -35,13 +37,15 @@
 
 ## Testing
 - No application tests have been run because no application code exists yet.
+- SQL verification of the `ai_public_context` view returned all five registered context documents.
+- The public Edge Function's full external HTTP response has not been verified in this environment.
 - Free-plan quotas, project suspension behavior, GitHub Pages compatibility and the end-to-end availability goal must be checked before declaring production readiness.
 
 ## Last completed task
-Created this Hub project record after explicit user approval; synchronized the registry/proposal and started structured context registration.
+Created the dedicated Hub files after explicit user approval; updated PROJECTS.md and PROJECT_PROPOSALS.md; registered the project and its five documents/source paths in the existing Supabase context registry.
 
 ## Current task
-Create/verify context files in GitHub and register this project with the existing AI_CONTEXT_HUB context service. This does not create the application backend.
+Complete context bookkeeping and clearly preserve the limitation that SQL-view verification succeeded while external HTTP endpoint verification remains pending. This does not create the application backend.
 
 ## Next step
-After the context registration is verified, plan the dedicated source repository and dedicated Supabase app project; first validate the zero-cost/24×7 constraint and write the schema/security design before implementation.
+Verify the public context endpoint externally when possible. Then plan the dedicated source repository and dedicated Supabase app project; first validate the zero-cost/24×7 constraint and write the schema/security design before implementation.
