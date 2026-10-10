@@ -12,14 +12,39 @@ https://github.com/teachersergiy-wq/r0zklad is the legacy working application an
 ## Verified current functionality
 The current V2 browser application includes calendar views, weekly/monthly/year navigation, lesson CRUD, student management, student personal token links, planned/completed lessons, payment status/details, lesson topics/homework, repeated lessons, booking/reschedule requests, reports, issue checking, audit/change log, backups, editing restrictions, mobile-responsive UI, dark theme and Supabase integration.
 
-## Historical project context from prior chats
-The project evolved from the user's earlier need for a school/tutor schedule and grade-management workflow. Durable requirements discussed over time include:
-- clear date-based lesson scheduling;
-- student-specific links;
-- payment and lesson-history tracking;
-- mobile access for students;
-- teacher-side management and reports;
-- migration from the old key-based application to a secure V2.
+## Historical broader product requirements — HISTORICAL / VERIFY AGAINST V2
+The original product idea was a free CRM/web app for a private tutor, with the main calendar sourced from `pifagor.mathema.me` (the user said they had access to its personal account) and additional private mathematics lessons that do not appear on that platform.
+
+Discussed input paths for the main schedule:
+- manual entry;
+- CSV import;
+- extracting lesson information from calendar screenshots/images using OCR/AI-assisted analysis.
+
+Discussed teacher-side functionality:
+- calendar and lesson management;
+- student database and a “Картка учня” profile;
+- student/parent contact details;
+- meeting link such as Google Meet or Zoom;
+- lesson history, homework, payment status and attachments;
+- quick lesson creation and file upload;
+- reports and mobile-responsive/PWA access.
+
+Discussed student/parent access:
+- an individual or shareable link to view the student's schedule;
+- showing available slots;
+- requesting rescheduling rather than silently changing the teacher's calendar.
+
+These are historical requirements, not a statement that every feature is present in the verified V2 source. The current V2 functionality section above is the more authoritative implementation summary.
+
+### Historical architecture exploration — NOT A FINAL IMPLEMENTATION DECISION
+Earlier planning compared several free/low-cost approaches:
+1. Google Sheets + AppSheet — quick prototype, but AppSheet's free use is limited and must not be assumed suitable for ongoing deployment.
+2. Baserow Cloud — quick database/UI option, with free-tier record/storage limits.
+3. Self-hosted NocoDB — free software but requires hosting/maintenance.
+4. Supabase + React/Vite + static hosting — flexible custom application; Supabase free-tier inactivity/quotas must be considered.
+5. Cloudflare Pages + Workers + D1 + R2 — potentially suitable for a low-cost static/custom stack, but has quotas and more implementation complexity.
+
+The durable user constraint is to prefer components that are free and continuously accessible. This is an acceptance requirement to verify, not a promise that any free plan guarantees 24/7 availability. These alternatives are historical exploration, not an instruction to replace the current verified V2 architecture.
 
 ### Earlier calendar prototype requirements — HISTORICAL, NOT CURRENT V2 SPEC
 The first calendar prototype discussions included the following details. These are preserved for traceability only; they must not override verified current V2 code or later approved requirements.
