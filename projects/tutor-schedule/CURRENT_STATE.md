@@ -56,6 +56,11 @@ Implemented and statically verified:
 - Targeted Supabase transaction tests for self-cancel and notifications: PASS.
 - Live browser/mobile/device QA is still a human verification step.
 
+## Context consolidation — 2026-10-10
+- Earlier calendar-prototype requirements and reported bugs are now documented in PROJECT_CONTEXT.md as historical context.
+- No application source code, database, pull request, branch or deployment was changed by this context-only update.
+- Current verified V2 and release-gate facts above remain unchanged.
+
 ## Release gates
 - Live QA of the accumulated UI changes, including UI-206.1 through UI-206.4, is still required.
 - One live authorized legacy-link redirect test remains required.
