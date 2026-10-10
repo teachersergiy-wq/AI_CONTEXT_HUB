@@ -22,5 +22,6 @@
 - [ ] Perform final cutover to Rozklad only after explicit human instruction.
 
 ## Context maintenance
+- [ ] If an older prototype-specific behavior is requested for the current app, compare it against V2 source and later decisions before implementing it.
 - [ ] Keep all five project-context files synchronized after significant changes.
 - [ ] Later: link verified repository paths in ai_project_sources and define/automate the stable public context document set.
