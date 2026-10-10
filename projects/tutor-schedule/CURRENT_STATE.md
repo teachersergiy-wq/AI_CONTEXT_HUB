@@ -57,7 +57,9 @@ Implemented and statically verified:
 - Live browser/mobile/device QA is still a human verification step.
 
 ## Context consolidation — 2026-10-10
-- Earlier calendar-prototype requirements and reported bugs are now documented in PROJECT_CONTEXT.md as historical context.
+- Earlier calendar-prototype requirements and reported bugs are documented in PROJECT_CONTEXT.md as historical context.
+- The broader original tutor-CRM scope is now also preserved: Mathema schedule import/manual entry, private extra lessons, student cards, parent/student links, homework/attachments, and the historical technology options considered.
+- These historical requirements and technology options are explicitly not proof of implementation and do not supersede verified V2 behavior.
 - No application source code, database, pull request, branch or deployment was changed by this context-only update.
 - Current verified V2 and release-gate facts above remain unchanged.
 
