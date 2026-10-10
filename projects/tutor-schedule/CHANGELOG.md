@@ -1,5 +1,10 @@
 # Tutor Schedule — CHANGELOG
 
+## 2026-10-10 — Historical prototype context consolidation
+- Preserved the earlier calendar-prototype requirements in PROJECT_CONTEXT.md: evening slots, click-to-assign student flow, slot states/colors, payment marker, time-picker constraints, day timeline, cloud-link requirement and historical UI bugs.
+- Explicitly labeled them historical so they do not override the verified V2 application or become assumed current bugs.
+- No application code, database, pull request or deployment was changed.
+
 ## 2026-09-18 to 2026-09-19
 ### V2 foundation
 - Migrated the new Rozklad application toward V2 Supabase data and Supabase Auth.
