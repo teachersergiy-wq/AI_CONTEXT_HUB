@@ -43,5 +43,10 @@ Status: implemented and static QA passed; human browser QA pending.
 Decision: user live testing supersedes the earlier row-203 static claim that the “Поточний період” placement was already correct. The current authoritative UI requirement is that “Поточний період” appears directly before the navigation arrows.
 Status: active.
 
+## 2026-10-10 — Earlier calendar prototype is historical context
+Decision: prototype-specific slot display, time picker, colors and reported bugs are documented for traceability only. They do not override verified V2 behavior and must not be reintroduced or treated as current defects without comparing them against current source and later requirements.
+Reason: Tutor Schedule evolved from the early calendar prototype into a more feature-rich V2 application.
+Status: active.
+
 ## QA boundary
 Decision: static checks and transactional DB tests can be verified automatically here; live browser/device behavior must be treated as human verification when unavailable.
