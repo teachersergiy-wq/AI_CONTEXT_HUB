@@ -10,7 +10,7 @@
 - Active development branch: gpt/v2-tz-2026-09-19
 - Pull Request: teachersergiy-wq/Rozklad#1
 - PR state: open, not merged
-- PR head changed during ongoing work; consult PR #1 for the live SHA.
+- Current PR head: 7cca6687857e50176f16967ebf9e7a60bd91db42 (checked 2026-10-11).
 - The previously failed UI-206.4 attempt was removed from the unmerged branch; the current head contains the corrected UI-206.4 implementation.
 - Final cutover: not performed
 - r0zklad remains public and online. On 2026-10-11, student-schedule.js was changed to remove the static map of nine UUID student tokens and resolve old key + student links through v2_resolve_legacy_student_link; REDIRECT_TO_V2 = true, with a 4-second fallback to legacy behavior. Commit: bd23540b5d250782b54a58874f39c4eaaad3bcbb. Static checks passed; live old-link QA still pending.
@@ -68,7 +68,7 @@ Implemented and statically verified:
 - PR #1 remains open and unmerged. Merge, GitHub Pages changes, and final cutover remain blocked until direct human instruction.
 - GitHub Pages source branch/commit could not be independently verified through the connected GitHub API; log #249 reports the dev branch, so this remains a deployment verification item.
 - The unsafe .github/workflows/v2-daily-backup.yml was deleted from the PR branch in commit 6d39ede9bb84453bce7665eef0b4768a225e6db0; it must not be merged or recreated in public Rozklad. It committed full JSON backups into the public repository.
-- Automated backup is not verified. A private rozklad-backups repository requires explicit human approval; secrets must be entered by the human, not shared in chat, and a real successful run must be verified.
+- ROLLBACK.md was added on the PR branch. Automated backup is not verified. A private rozklad-backups repository requires explicit human approval; secrets must be entered by the human, not shared in chat, and a real successful run must be verified.
 - Legacy-link bridge static QA is pending independent verification and live QA using an old URL supplied by the human. Do not log or paste the shared key.
 - After successful live redirect QA, rotate tokens for the nine original students; current static files must contain no old UUID token map. Do not rewrite repository history.
 - LEG-4 current-file/history audit for all public repositories and AI_CONTEXT_HUB is still in progress; AI_CONTEXT_HUB remains public pending human decision.
