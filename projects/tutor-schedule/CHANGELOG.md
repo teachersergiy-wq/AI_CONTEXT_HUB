@@ -1,5 +1,12 @@
 # Tutor Schedule — CHANGELOG
 
+## 2026-10-11 — Legacy bridge security and release safeguards
+- Removed the static mapping of nine legacy student IDs to V2 UUID tokens from public r0zklad/student-schedule.js; old key + student links now resolve through v2_resolve_legacy_student_link, with REDIRECT_TO_V2 switch and a 4-second fallback. Static JavaScript parse passed; live old-link QA is still pending.
+- Removed the unsafe v2-daily-backup.yml from the public Rozklad PR branch because it committed full JSON backups into the repository.
+- Added ROLLBACK.md to the Rozklad development branch and refreshed TODO.md / CURRENT_STATE.md with current release gates.
+- Scanned current files of r0zklad and the Rozklad PR branch for UUID token strings, JWT-shaped strings and sb_secret keys; none were found after the bridge change. Scanned all current AI_CONTEXT_HUB files with the same patterns and simple credential-assignment checks; none were found. This does not clear historical commits: old tokens may remain visible in public git history, so rotate the nine student tokens after the live redirect test; do not rewrite history.
+- PR #1 remains open and unmerged. GitHub Pages source remains unverified, private backup repository creation awaits human confirmation, and live browser/device QA remains pending.
+
 ## 2026-10-10 — Broader historical tutor-CRM context
 - Added the original broader scope: Mathema schedule source, manual/CSV/screenshot import options, additional private lessons, student cards, parent/student links, lesson history, homework/attachments and mobile access.
 - Recorded the previously explored Google Sheets/AppSheet, Baserow, self-hosted NocoDB, Supabase + React/Vite, and Cloudflare options as historical architecture exploration, not a current implementation decision.
