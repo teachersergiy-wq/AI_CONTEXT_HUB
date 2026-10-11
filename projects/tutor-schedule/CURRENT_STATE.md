@@ -6,15 +6,16 @@
 - Separate legacy repository: teachersergiy-wq/r0zklad
 - Separate Supabase project: tutor-calendar
 
-## Repository state — VERIFIED 2026-09-27
+## Repository / deployment state — audited 2026-10-11
 - Active development branch: gpt/v2-tz-2026-09-19
 - Pull Request: teachersergiy-wq/Rozklad#1
 - PR state: open, not merged
-- Current PR head: 6afc45471f472b2cc38137cc4452b166f7ca7f90
+- PR head changed during ongoing work; consult PR #1 for the live SHA.
 - The previously failed UI-206.4 attempt was removed from the unmerged branch; the current head contains the corrected UI-206.4 implementation.
 - Final cutover: not performed
-- r0zklad: unchanged except the explicitly authorized student-link redirect in student-schedule.js
-- public.schedules: not modified
+- r0zklad remains public and online. On 2026-10-11, student-schedule.js was changed to remove the static map of nine UUID student tokens and resolve old key + student links through v2_resolve_legacy_student_link; REDIRECT_TO_V2 = true, with a 4-second fallback to legacy behavior. Commit: bd23540b5d250782b54a58874f39c4eaaad3bcbb. Static checks passed; live old-link QA still pending.
+- public.schedules schema/data were not migrated or overwritten. Direct anon/authenticated table grants and the permissive policy were removed; a restricted legacy backup table legacy_schedules_backup_20261009 exists. Legacy RPCs remain for the old site pending later retirement.
+- Rozklad and AI_CONTEXT_HUB are public. Private backup repository has not been created; explicit human approval is required.
 
 ## Verified V2 backend state
 - Teacher access uses Supabase Auth.
@@ -37,7 +38,7 @@ Implemented and statically verified:
 - Student Month/Year lesson highlighting.
 - Student mobile lesson-modal viewport positioning and backdrop-close fix.
 - Teacher Month landscape scaling.
-- Authorized legacy r0zklad student-link redirect.
+- Legacy r0zklad student-link redirect bridge uses server-side RPC; live QA pending.
 - Student self-cancel counter/action and teacher persistent notification panel.
 
 ## 2026-09-27 UI polish and UI-206 — VERIFIED / STATIC QA
@@ -63,9 +64,15 @@ Implemented and statically verified:
 - No application source code, database, pull request, branch or deployment was changed by this context-only update.
 - Current verified V2 and release-gate facts above remain unchanged.
 
-## Release gates
-- Live QA of the accumulated UI changes, including UI-206.1 through UI-206.4, is still required.
-- One live authorized legacy-link redirect test remains required.
-- Supabase Auth Leaked Password Protection must be enabled manually in Dashboard.
-- Final clean resync from legacy must happen immediately before deployment.
-- PR #1 merge and final cutover remain human-controlled.
+## Security / release gates — 2026-10-11
+- PR #1 remains open and unmerged. Merge, GitHub Pages changes, and final cutover remain blocked until direct human instruction.
+- GitHub Pages source branch/commit could not be independently verified through the connected GitHub API; log #249 reports the dev branch, so this remains a deployment verification item.
+- The unsafe .github/workflows/v2-daily-backup.yml was deleted from the PR branch in commit 6d39ede9bb84453bce7665eef0b4768a225e6db0; it must not be merged or recreated in public Rozklad. It committed full JSON backups into the public repository.
+- Automated backup is not verified. A private rozklad-backups repository requires explicit human approval; secrets must be entered by the human, not shared in chat, and a real successful run must be verified.
+- Legacy-link bridge static QA is pending independent verification and live QA using an old URL supplied by the human. Do not log or paste the shared key.
+- After successful live redirect QA, rotate tokens for the nine original students; current static files must contain no old UUID token map. Do not rewrite repository history.
+- LEG-4 current-file/history audit for all public repositories and AI_CONTEXT_HUB is still in progress; AI_CONTEXT_HUB remains public pending human decision.
+- Stable rollback tags stable-r0zklad-pre-cutover and v2-pre-merge are not yet created; tag-writing capability was not exposed by the current connector.
+- Live browser/device QA remains required for REPORT-211, HDR-1, student numbering, reschedule source/target highlighting, mobile modal/landscape and student pending/debt/period UI.
+- Final resync from legacy is cancelled. Never overwrite V2 with legacy data.
+- Stage B is not authorized and must not start before a signal from Claude or the human.
