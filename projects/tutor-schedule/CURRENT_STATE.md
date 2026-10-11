@@ -13,7 +13,7 @@
 - Current PR head: 7cca6687857e50176f16967ebf9e7a60bd91db42 (checked 2026-10-11).
 - The previously failed UI-206.4 attempt was removed from the unmerged branch; the current head contains the corrected UI-206.4 implementation.
 - Final cutover: not performed
-- r0zklad remains public and online. On 2026-10-11, student-schedule.js was changed to remove the static map of nine UUID student tokens and resolve old key + student links through v2_resolve_legacy_student_link; REDIRECT_TO_V2 = true, with a 4-second fallback to legacy behavior. Commit: bd23540b5d250782b54a58874f39c4eaaad3bcbb. Static checks passed; live old-link QA still pending.
+- r0zklad remains public and online. On 2026-10-11, student-schedule.js was changed to remove the static map of nine UUID student tokens and resolve old key + student links through v2_resolve_legacy_student_link; REDIRECT_TO_V2 = true, with a 4-second fallback to legacy behavior. Commits: bd23540b5d250782b54a58874f39c4eaaad3bcbb and bdb748d07d84f8f8f427a32752867c7b3178f4c2. Static checks passed; live old-link QA still pending.
 - public.schedules schema/data were not migrated or overwritten. Direct anon/authenticated table grants and the permissive policy were removed; a restricted legacy backup table legacy_schedules_backup_20261009 exists. Legacy RPCs remain for the old site pending later retirement.
 - Rozklad and AI_CONTEXT_HUB are public. Private backup repository has not been created; explicit human approval is required.
 
