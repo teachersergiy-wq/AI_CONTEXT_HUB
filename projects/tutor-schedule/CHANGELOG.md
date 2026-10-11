@@ -2,6 +2,7 @@
 
 ## 2026-10-11 — Legacy bridge security and release safeguards
 - Removed the static mapping of nine legacy student IDs to V2 UUID tokens from public r0zklad/student-schedule.js; old key + student links now resolve through v2_resolve_legacy_student_link, with REDIRECT_TO_V2 switch and a 4-second fallback. Static JavaScript parse passed; live old-link QA is still pending.
+- Follow-up hardening: wrap the RPC invocation in a promise callback so synchronous client errors also trigger the 4-second-safe legacy fallback. Commit bdb748d07d84f8f8f427a32752867c7b3178f4c2; static parse PASS, no UUID token strings in the current file.
 - Removed the unsafe v2-daily-backup.yml from the public Rozklad PR branch because it committed full JSON backups into the repository.
 - Added ROLLBACK.md to the Rozklad development branch and refreshed TODO.md / CURRENT_STATE.md with current release gates.
 - Scanned current files of r0zklad and the Rozklad PR branch for UUID token strings, JWT-shaped strings and sb_secret keys; none were found after the bridge change. Scanned all current AI_CONTEXT_HUB files with the same patterns and simple credential-assignment checks; none were found. This does not clear historical commits: old tokens may remain visible in public git history, so rotate the nine student tokens after the live redirect test; do not rewrite history.
