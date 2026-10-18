@@ -12,7 +12,7 @@
 - [x] npm audit після оновлення Vite: 0 vulnerabilities.
 
 ## Поточне
-- [ ] Створити/підключити публічний GitHub repo teachersergiy-wq/multiplication-practice. Поточний браузер чекає ручного входу власника у GitHub/Google; після цього можна створити repo та опублікувати джерело.
+- [x] Підключити GitHub repo `teachersergiy-wq/multiplication-practice` і опублікувати вихідний код у `main`; `.env`, `node_modules`, `dist` і `supabase/.temp/` виключені.
 - [ ] Підключити teacher Auth і безпечне створення учнів за кодом/паролем через Edge Function.
 - [ ] Підключити каталог і чернетки до Supabase замість localStorage.
 - [ ] Додати editor питань і захищене збереження answer keys.
