@@ -16,7 +16,7 @@
 - [ ] Вирішити, чи додавати 12 клас у UI (БД підтримує 1–12, поточний UI 1–11).
 
 - [x] Підключити GitHub repo `teachersergiy-wq/multiplication-practice` і опублікувати вихідний код у `main`; `.env`, `node_modules`, `dist` і `supabase/.temp/` виключені.
-- [ ] Переглянути PR з гілки `claude/harden-grants-and-align-migrations`; застосувати міграцію `20261018010000` спершу на Supabase branch (може мати вартість), перевірити grants і політики запитами, і лише після схвалення власника — на основний проєкт. Production не змінювати без цього.
+- [ ] Переглянути PR з гілки `claude/harden-grants-and-align-migrations`; міграцію `20261018010000` перевіряти лише локально в CI (GitHub Actions + `supabase start`, без платних Supabase branches); на основний проєкт — тільки після зеленого CI і рішення власника. Production не змінювати без цього.
 - [ ] Вирішити, чи публікація тесту виконується лише серверною функцією з перевіркою ключів відповіді.
 - [ ] Вирішити, чи учень може належати кільком класам (зараз `class_students` має PK по `student_id`).
 - [ ] Узгодити `src/domain.ts` зі схемою БД (коди/uuid предметів; типи `single_choice`, `multiple_choice`, `true_false`) перед підключенням Supabase.
