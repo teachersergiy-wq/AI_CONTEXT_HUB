@@ -13,7 +13,7 @@
 - VERIFIED: production build проходить.
 - VERIFIED: npm audit після Vite upgrade показує 0 уразливостей.
 - PLANNED: підключення Supabase, Auth та реальних бібліотечних даних.
-- BLOCKED: створення/публікація GitHub repo очікує, поки користувач увійде у GitHub у браузері.
+- VERIFIED: вихідний код опубліковано в GitHub `teachersergiy-wq/multiplication-practice`, гілка `main`; `.env`, `node_modules`, `dist` і службові файли Supabase виключені.
 
 ## База й бекенд
 - VERIFIED: окремий Supabase проєкт multiplication-practice, eu-west-1, ref bvetbqbxjrvrmdhszmcw.
