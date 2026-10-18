@@ -17,7 +17,7 @@
 
 - VERIFIED: у PR #1 `codex/align-domain-and-client` узгоджено типи запитань з API contract (включно з ordering/matching), доменні коди предметів і localStorage v1→v2.
 - VERIFIED: `npm ci`, `npm test` (5/5), production build і `npm audit` (0 vulnerabilities) пройшли локально на Node 24.20.0; build пройшов без `.env`.
-- PARTIAL: PR #1 відкритий, ще не злитий. Supabase browser client експортує null без env і поки не використовується UI; GitHub Actions очікуються після оновлення гілки.
+- PARTIAL: PR #1 відкритий, ще не злитий. Supabase browser client експортує null без env і поки не використовується UI; GitHub Actions CI на актуальному head пройшли успішно (run #9).
 - DECISION: UI лишається на класах 1–11; підтримку 12 класу відкладено як відкрите питання.
 
 ## База й бекенд
