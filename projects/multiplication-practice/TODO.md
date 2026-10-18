@@ -12,6 +12,9 @@
 - [x] npm audit після оновлення Vite: 0 vulnerabilities.
 
 ## Поточне
+- [x] Виконано C1 у гілці `codex/align-domain-and-client`: узгоджено типи предметів/питань, додано міграцію локальних чернеток і необов’язковий Supabase-клієнт; PR #1 відкритий, очікує рішення власника.
+- [ ] Вирішити, чи додавати 12 клас у UI (БД підтримує 1–12, поточний UI 1–11).
+
 - [x] Підключити GitHub repo `teachersergiy-wq/multiplication-practice` і опублікувати вихідний код у `main`; `.env`, `node_modules`, `dist` і `supabase/.temp/` виключені.
 - [ ] Підключити teacher Auth і безпечне створення учнів за кодом/паролем через Edge Function.
 - [ ] Підключити каталог і чернетки до Supabase замість localStorage.
