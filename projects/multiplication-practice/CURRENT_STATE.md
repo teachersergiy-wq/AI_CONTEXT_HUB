@@ -17,6 +17,11 @@
 - BLOCKED (хмарна сесія AI, 2026-10-18): мережева політика сесії відхиляє `registry.npmjs.org` (403 на CONNECT), тому `npm ci`, збірку й `npm audit` у цій сесії повторно перевірити не вдалося. Записи VERIFIED про збірку й audit вище отримані раніше локально; у хмарі не відтворені.
 - VERIFIED (за кодом): `src/domain.ts` не узгоджений зі схемою БД — рядкові id предметів (`math`) замість `subjects.code`/uuid (`mathematics`), `QuestionType` не містить `single_choice` і `true_false`. Потрібно узгодити перед підключенням Supabase.
 
+- VERIFIED: у PR #1 `codex/align-domain-and-client` узгоджено доменні коди предметів і типи запитань; localStorage чернетки мігруються без втрати інших полів.
+- VERIFIED: `npm ci`, `npm test` (3/3), production build і `npm audit` (0 vulnerabilities) пройшли локально.
+- PARTIAL: PR #1 відкритий, ще не злитий. Supabase browser client експортує null без env і поки не використовується UI.
+- DECISION: UI лишається на класах 1–11; підтримку 12 класу відкладено як відкрите питання.
+
 ## База й бекенд
 - VERIFIED: окремий Supabase проєкт multiplication-practice, eu-west-1, ref bvetbqbxjrvrmdhszmcw.
 - VERIFIED: застосовані міграції загальної схеми, hardening ключів і замороження опублікованих шаблонів.

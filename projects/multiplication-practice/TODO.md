@@ -12,6 +12,9 @@
 - [x] npm audit після оновлення Vite: 0 vulnerabilities.
 
 ## Поточне
+- [x] Виконано C1 у гілці `codex/align-domain-and-client`: узгоджено типи предметів/питань, додано міграцію локальних чернеток і необов’язковий Supabase-клієнт; PR #1 відкритий, очікує рішення власника.
+- [ ] Вирішити, чи додавати 12 клас у UI (БД підтримує 1–12, поточний UI 1–11).
+
 - [x] Підключити GitHub repo `teachersergiy-wq/multiplication-practice` і опублікувати вихідний код у `main`; `.env`, `node_modules`, `dist` і `supabase/.temp/` виключені.
 - [ ] Переглянути PR з гілки `claude/harden-grants-and-align-migrations`; застосувати міграцію `20261018010000` спершу на Supabase branch (може мати вартість), перевірити grants і політики запитами, і лише після схвалення власника — на основний проєкт. Production не змінювати без цього.
 - [ ] Вирішити, чи публікація тесту виконується лише серверною функцією з перевіркою ключів відповіді.
@@ -31,14 +34,14 @@
 Власність файлів: Codex — `src/**`, `index.html`, `vite.config.ts`, `package*.json`, `.env.example`. Grok — `supabase/**`, `contracts/database.types.ts`. Координатор — `docs/**`, `contracts/api.ts`, `.github/**`, Hub.
 
 **Хвиля 0 — фундамент**
-- [ ] K1 (координатор): `docs/API_CONTRACT.md` і `contracts/api.ts`. Приймання: кожна функція має вхід, вихід, коди помилок, роль, таблиці й політики; Codex і Grok підтвердили в PR, що розбіжностей немає; описано JSON-форми питань, ключів і відповідей для 7 типів.
-- [ ] K2 (координатор): CI в `.github/workflows` — збірка, типізація, `npm audit`, пошук секретів. Приймання: зелений запуск на GitHub.
-- [ ] K3 (координатор): `docs/WORKFLOW.md` і шаблон PR. Приймання: власність файлів, імена гілок, чекліст рев'ю.
+- [ ] K1 (координатор; PARTIAL — файли в гілці `claude/api-contract`, `tsc` на контракті проходить, PR не відкрито): `docs/API_CONTRACT.md` і `contracts/api.ts`. Приймання: кожна функція має вхід, вихід, коди помилок, роль, таблиці й політики; Codex і Grok підтвердили в PR, що розбіжностей немає; описано JSON-форми питань, ключів і відповідей для 7 типів.
+- [ ] K2 (координатор; PARTIAL — гілка `claude/ci-and-workflow`, на GitHub не запускався): CI в `.github/workflows` — збірка, типізація, `npm audit`, пошук секретів. Приймання: зелений запуск на GitHub.
+- [ ] K3 (координатор; PARTIAL — та сама гілка): `docs/WORKFLOW.md` і шаблон PR. Приймання: власність файлів, імена гілок, чекліст рев'ю.
 - [ ] G0 (Grok, `grok/review-grants-hardening`): перегляд і тести міграції посилення прав на локальному Supabase. Приймання: тести зелені або чітко BLOCKED; production не змінено.
 - [ ] C1 (Codex, `codex/align-domain-and-client`): узгодити `src/domain.ts` зі схемою, клієнт Supabase без Auth, результати `npm ci`/build/audit. Приймання: збірка проходить, застосунок працює без `.env`, чернетки зберігаються, змінено лише власні файли.
 
 **Хвиля 1–4 (після K1, у цьому порядку)**
-- [ ] G1 `provision-teacher`, G2 `create-students` і `student-login` (з блокуванням спроб), C2 вхід учителя, C3 класи й учні з одноразовими даними входу.
+- [ ] G1 `provision-teacher`, G2 `create-students`, `reset-student-password`, `delete-student` (окремої `student-login` немає — D1 B), C2 вхід учителя, C3 класи й учні з одноразовими даними входу.
 - [ ] G3 `upsert-question` (7 типів, ключі в `private`), міграція enum для `ordering`/`matching`, G4 `publish-assessment`, G5 тести RLS; C4 редактор питань, C5 бібліотека з Supabase, C6 публікація й призначення.
 - [ ] G6 `start-attempt`, `submit-answer`, `finish-attempt` з серверним таймером і підрахунком; C7 вхід учня, проходження, результат, історія.
 - [ ] Рівні множення 1–5, результати класу для вчителя, перевірка GitHub Pages разом з Auth, квот Free і паузи проєкту, мобільна версія й доступність.
