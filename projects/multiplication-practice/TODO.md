@@ -13,6 +13,12 @@
 
 ## Поточне
 - [x] Підключити GitHub repo `teachersergiy-wq/multiplication-practice` і опублікувати вихідний код у `main`; `.env`, `node_modules`, `dist` і `supabase/.temp/` виключені.
+- [ ] Переглянути PR з гілки `claude/harden-grants-and-align-migrations`; застосувати міграцію `20261018010000` спершу на Supabase branch (може мати вартість), перевірити grants і політики запитами, і лише після схвалення власника — на основний проєкт. Production не змінювати без цього.
+- [ ] Вирішити, чи публікація тесту виконується лише серверною функцією з перевіркою ключів відповіді.
+- [ ] Вирішити, чи учень може належати кільком класам (зараз `class_students` має PK по `student_id`).
+- [ ] Узгодити `src/domain.ts` зі схемою БД (коди/uuid предметів; типи `single_choice`, `multiple_choice`, `true_false`) перед підключенням Supabase.
+- [ ] Правило для редактора: JSON `choices` не містить ознаки правильності відповіді.
+- [ ] Повторити `npm ci`, `npm run build` і `npm audit` у середовищі з доступом до npm (локально) і підтвердити VERIFIED; у хмарній сесії AI npm registry заблоковано.
 - [ ] Підключити teacher Auth і безпечне створення учнів за кодом/паролем через Edge Function.
 - [ ] Підключити каталог і чернетки до Supabase замість localStorage.
 - [ ] Додати editor питань і захищене збереження answer keys.
