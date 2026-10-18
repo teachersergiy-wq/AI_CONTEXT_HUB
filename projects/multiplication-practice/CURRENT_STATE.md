@@ -15,6 +15,11 @@
 - PLANNED: підключення Supabase, Auth та реальних бібліотечних даних.
 - VERIFIED: вихідний код опубліковано в GitHub `teachersergiy-wq/multiplication-practice`, гілка `main`; `.env`, `node_modules`, `dist` і службові файли Supabase виключені.
 
+- VERIFIED: у PR #1 `codex/align-domain-and-client` узгоджено доменні коди предметів і типи запитань; localStorage чернетки мігруються без втрати інших полів.
+- VERIFIED: `npm ci`, `npm test` (3/3), production build і `npm audit` (0 vulnerabilities) пройшли локально.
+- PARTIAL: PR #1 відкритий, ще не злитий. Supabase browser client експортує null без env і поки не використовується UI.
+- DECISION: UI лишається на класах 1–11; підтримку 12 класу відкладено як відкрите питання.
+
 ## База й бекенд
 - VERIFIED: окремий Supabase проєкт multiplication-practice, eu-west-1, ref bvetbqbxjrvrmdhszmcw.
 - VERIFIED: застосовані міграції загальної схеми, hardening ключів і замороження опублікованих шаблонів.
