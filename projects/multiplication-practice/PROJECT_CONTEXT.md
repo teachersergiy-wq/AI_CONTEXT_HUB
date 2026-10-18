@@ -42,5 +42,5 @@
 
 ## Посилання
 - Hub: https://github.com/teachersergiy-wq/AI_CONTEXT_HUB/tree/main/projects/multiplication-practice
-- Застосунок: https://github.com/teachersergiy-wq/multiplication-practice (репозиторій ще очікує створення)
+- Застосунок: https://github.com/teachersergiy-wq/multiplication-practice
 - Supabase: https://supabase.com/dashboard/project/bvetbqbxjrvrmdhszmcw
