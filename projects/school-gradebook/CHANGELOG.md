@@ -1,5 +1,14 @@
 # Changelog — School Gradebook / Class Journal
 
+## 2026-10-20
+
+### Source discovery audit
+- Checked the repositories visible through the connected GitHub integration and searched for repository/code matches using the historical `journal_gui.py` name, gradebook terms, and assessment-category markers.
+- Checked the accessible file Library for the known Python source reference.
+- No repository or source file could be reliably identified as the School Gradebook project. Similar public search hits were unrelated and were not modified.
+- Implementation review and bug fixes remain BLOCKED until the authoritative repository URL or source files are provided.
+- No application code, database, or deployment was changed.
+
 ## 2026-09-27
 
 ### Project record created
