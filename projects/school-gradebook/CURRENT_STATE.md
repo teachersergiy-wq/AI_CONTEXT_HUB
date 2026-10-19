@@ -1,7 +1,7 @@
 # Current State — School Gradebook / Class Journal
 
 **Status:** PARTIAL / HISTORICAL  
-**Last updated:** 2026-09-27
+**Last updated:** 2026-10-20
 
 ## VERIFIED FROM PRIOR WORK
 
@@ -29,6 +29,15 @@ The last reported GUI problems in the available chat context were:
 
 Because the current repository is not connected, these cannot be asserted as current bugs.
 
+## REPOSITORY DISCOVERY AUDIT — 2026-10-20
+
+**VERIFIED — search of currently connected sources:**
+- The connected GitHub repository list for `teachersergiy-wq` showed `mustang`, `Rozklad`, `r0zklad`, `AI_CONTEXT_HUB`, and `multiplication-practice`; none was identified as School Gradebook.
+- GitHub repository/code searches for gradebook terms, `journal_gui.py`, and the historical assessment-category labels returned unrelated projects, not a reliable match for this project.
+- The accessible file Library was checked. No `journal_gui.py` or other clearly matching Python gradebook source was found; files from unrelated project contexts were not treated as this application's source.
+
+**BLOCKED:** The actual source repository or authoritative source files have not been identified. No application code has been inspected or changed, and no application tests have been run.
+
 ## NOT VERIFIED
 
 - current source code state;
@@ -41,4 +50,4 @@ Because the current repository is not connected, these cannot be asserted as cur
 
 ## Current blocker
 
-A production repository/source baseline has not yet been connected or verified for this Hub record.
+Provide/connect the actual gradebook repository URL or provide the authoritative source files. Until then, implementation and verification of the historical UI issues must remain blocked.
