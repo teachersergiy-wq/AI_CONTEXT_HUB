@@ -17,13 +17,17 @@
 - BLOCKED (хмарна сесія AI, 2026-10-18): мережева політика сесії відхиляє `registry.npmjs.org` (403 на CONNECT), тому `npm ci`, збірку й `npm audit` у цій сесії повторно перевірити не вдалося. Записи VERIFIED про збірку й audit вище отримані раніше локально; у хмарі не відтворені.
 - VERIFIED (за кодом): `src/domain.ts` не узгоджений зі схемою БД — рядкові id предметів (`math`) замість `subjects.code`/uuid (`mathematics`), `QuestionType` не містить `single_choice` і `true_false`. Потрібно узгодити перед підключенням Supabase.
 
-- VERIFIED: у PR #1 `codex/align-domain-and-client` узгоджено доменні коди предметів і типи запитань; localStorage чернетки мігруються без втрати інших полів.
-- VERIFIED: `npm ci`, `npm test` (3/3), production build і `npm audit` (0 vulnerabilities) пройшли локально.
-- PARTIAL: PR #1 відкритий, ще не злитий. Supabase browser client експортує null без env і поки не використовується UI.
+- VERIFIED: у PR #1 `codex/align-domain-and-client` узгоджено типи запитань з API contract (включно з ordering/matching), доменні коди предметів і localStorage v1→v2.
+- VERIFIED: `npm ci`, `npm test` (5/5), production build і `npm audit` (0 vulnerabilities) пройшли локально на Node 24.20.0; build пройшов без `.env`.
+- PARTIAL: PR #1 відкритий, ще не злитий. Supabase browser client експортує null без env і поки не використовується UI; GitHub Actions CI на актуальному head пройшли успішно (run #9).
 - DECISION: UI лишається на класах 1–11; підтримку 12 класу відкладено як відкрите питання.
 
 ## База й бекенд
-- VERIFIED: окремий Supabase проєкт multiplication-practice, eu-west-1, ref bvetbqbxjrvrmdhszmcw.
+- DECISION (власник, 2026-10-19): база живе в Supabase-акаунті `naviz.school.documents@gmail.com`.
+- VERIFIED: проєкт `iwydxledvafcgrtylpis` (`multiplication-practice`, eu-west-1, акаунт naviz). Застосовано всі 9 міграцій з `main`; стан перевірено запитами читання 2026-10-19: 15 таблиць з RLS, 22 політики, 4 предмети, 5 конфігів множення, 0 профілів і користувачів Auth, 7 типів питань. Роботу функцій і RLS на реальних даних у цій базі не перевіряли (лише CI на локальному Supabase).
+- ABANDONED: проєкт `bvetbqbxjrvrmdhszmcw` (інший акаунт) не використовується. `iaeufbphagisyukorwsw` у акаунті naviz порожній, не використовується.
+- PARTIAL: у базі є тестова функція `public._test_allow_teacher` (лише `service_role`); прибрати в issue #24. Версії міграцій у базі відрізняються від імен файлів у репозиторії.
+- PLANNED/BLOCKED: Edge Functions не розгорнуто; публічну реєстрацію не вимкнено; облікових записів учителів і allowlist немає.
 - VERIFIED: застосовані міграції загальної схеми, hardening ключів і замороження опублікованих шаблонів.
 - VERIFIED: 4 системні предмети та 5 конфігурацій множення для 3 класу.
 - VERIFIED: усі 13 таблиць public мають RLS; ключ відповіді у private має RLS і нечитабельний роллю authenticated.
@@ -34,7 +38,7 @@
 - SECURITY DEFINER RPC register_teacher відкликано для браузерних ролей до реалізації provisioning Edge Function.
 - Security advisor лишив INFO про RLS без політик на приватній таблиці (очікувано для deny-by-default); попередження про доступний authenticated RPC зникло.
 
-## Перевірка живої бази проти репозиторію (2026-10-18, лише запити читання)
+## Перевірка старої бази проти репозиторію (2026-10-18, лише запити читання; проєкт `bvetbqbxjrvrmdhszmcw` покинуто)
 Перевірено каталожними запитами до проєкту `bvetbqbxjrvrmdhszmcw`; жодних змін у базі не вносилось. Дані: 4 предмети, 5 конфігурацій множення, 0 профілів, 0 шаблонів, 0 користувачів Auth.
 
 - VERIFIED: RLS увімкнено на всіх 13 таблицях `public` і на `private.assessment_answer_keys` (0 політик, deny-by-default).
