@@ -2,7 +2,7 @@
 
 ## Highest priority
 
-- [ ] Connect or identify the actual GitHub repository for the gradebook.
+- [ ] Connect or identify the actual GitHub repository for the gradebook. **BLOCKED (2026-10-20):** checked the connected GitHub repositories and accessible file Library; no source was confidently matched to this project. Need the authoritative repository URL or source files.
 - [ ] Inspect the current Python source and establish a verified baseline.
 - [ ] Determine the actual persistence layer and current schema.
 - [ ] Verify the lesson/gradebook UI against the historical requirements.
