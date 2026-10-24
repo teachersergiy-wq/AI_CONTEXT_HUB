@@ -1,5 +1,15 @@
 # Навчальна студія — CHANGELOG
 
+## 2026-10-22 — Pages, Edge Functions, міграції в базі, вимога mobile-first
+- VERIFIED: застосунок розміщено на GitHub Pages (D6, workflow `pages.yml`, PR #46); `vite.config.ts` має `base: "./"`. Статус Pages виведено з успішного запуску workflow (API Pages і github.io із середовища координатора недоступні).
+- VERIFIED: секрети `ALLOWED_ORIGINS` і `STUDENT_EMAIL_DOMAIN` задав власник у Dashboard (значення не передавались). Вхід власника `teachersergiy@gmail.com` відбувся; запитом перевірено профіль вчителя, школу, клас і `class_teachers`.
+- VERIFIED (запит до бази, 22.10 ввечері): власник виконав у SQL Editor `pending_migrations_g2c_g3_g6_g6b.sql`. Є функції G3 (`api_save_question_with_key`, `api_get_assessment_draft`, `api_delete_question`, `api_reorder_questions`), G6/G6b (`api_start_attempt`, `api_submit_answer`, `api_finish_attempt`, `private.score_response`, `finalize_attempt`, `abandon_attempt`); `_test_allow_teacher` видалено. Security advisors: лише очікувані INFO про `private.allowed_teachers` і `private.assessment_answer_keys` та WARN про вимкнений захист від зламаних паролів (залишено вимкненим: паролі учнів короткі).
+- VERIFIED (`list_edge_functions`): у проєкті 13 функцій, усі ACTIVE, `verify_jwt=true`. Координатор розгорнув 5 (`create-students`, `reset-student-password`, `delete-student`, `publish-assessment`, `clone-assessment`) з коду `main` aec4415; ще 7 (editor і attempts) розгорнув хтось інший, код не звірено з `main`. Функції ще не викликались із застосунку.
+- Версії міграцій у журналі бази розходяться з іменами файлів; міграції з SQL Editor у журнал не потрапляють (інструмент координатора не застосовує міграції з `drop`/`delete`).
+- DECISION (власник, 2026-10-22): інтерфейс учня розраховано на смартфони. Додано `docs/STUDENT_UI_MOBILE.md` (PR #47, злито): 360×640, цілі ≥ 44 px, питання ≥ 18 px, поля ≥ 16 px, числова клавіатура, matching/ordering без обов'язкового drag-and-drop, збереження введеного при блокуванні екрана. Вимогу передано Codex у #29 і #44; перевірятиметься в рев'ю.
+- Не підтверджено: Auth приймає 6-символьний пароль і домен `.invalid` (перевірить перше створення учня); вимкнена публічна реєстрація.
+- Відкрито: C6 (#29), C7 (#44) для Codex; G3b (#42), G5 (#43) для Grok; PR #41 (CI-проба) чекає власника.
+
 ## 2026-10-20 — Серверна частина злита, редактор і бібліотека на фронтенді, акаунт вчителя
 - Злито в `main` застосунку за рішенням власника: G2b (#22), G2c (#30), G3 (#31), G4 (#34), G6 (#35), G6b (#37), C3 (#21), C4 (#38), C5 (#40). CI на `main` зелений (Web, Database tests, Secret scan).
 - Рев'ю координатора G6/G4/G3 (читання коду, не запуск): витоків ключів і правильності `graded` не знайдено; дефекти (прострочена спроба, нецілі settings, одночасний старт, ліміти відповіді) виправлено в G6b (#37). Не охоплено G6b і винесено в G3b (#42): перевірка власника/`draft` у SQL збереження питання, перепакування позицій, перевірка ключів проти `choices`.
