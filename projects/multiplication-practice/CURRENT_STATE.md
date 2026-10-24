@@ -20,7 +20,7 @@
 - VERIFIED: у PR #1 `codex/align-domain-and-client` узгоджено типи запитань з API contract (включно з ordering/matching), доменні коди предметів і localStorage v1→v2.
 - VERIFIED: `npm ci`, `npm test` (5/5), production build і `npm audit` (0 vulnerabilities) пройшли локально на Node 24.20.0; build пройшов без `.env`.
 - PARTIAL: PR #1 відкритий, ще не злитий. Supabase browser client експортує null без env і поки не використовується UI; GitHub Actions CI на актуальному head пройшли успішно (run #9).
-- DECISION: UI лишається на класах 1–11; підтримку 12 класу відкладено як відкрите питання.
+- DECISION (D8, власник 2026-10-24): UI на класах 1–11; 12 клас не додається.
 
 ## База й бекенд
 - DECISION (власник, 2026-10-19): база живе в Supabase-акаунті `naviz.school.documents@gmail.com`.
@@ -59,3 +59,7 @@ Hub TODO.md містить етапи Auth, editor, учнівського те�
 
 ## Інтерфейс учня (2026-10-22)
 - DECISION (власник): учні користуються смартфонами. Вимоги в `docs/STUDENT_UI_MOBILE.md` (в застосунку, злито PR #47). VERIFIED (за кодом): адаптивні `@media` є для вчительських екранів; екрана учня ще немає (C6/C7).
+
+## Стан 2026-10-24
+- VERIFIED: повний потік вчитель → тест → призначення → учень → результат на живій базі; класи створюються через `create-class`.
+- PARTIAL: перевірка на телефоні, публічна реєстрація Auth, G5 (червоний CI), генератор множення, рейтинги, результати класу для вчителя (C9).
