@@ -69,3 +69,11 @@ Hub TODO.md містить етапи Auth, editor, учнівського те�
 - VERIFIED: у `main` застосунку C9/C10, G5, G6c+G8, контракт генератора; CI на момент злиття зелений.
 - PLANNED: генератор множення (G9 #72, C11 #73), «Супер рівень» (після генератора), рейтинги з opt-in, додавання вчителів без SQL, `docs/OPERATIONS.md`.
 - Не перевірено: мобільний потік на телефоні.
+
+## Стан 2026-10-27
+- VERIFIED (запитами до бази після виконання власником): G9/G9b (генератор множення; hotfix без `DELETE`/temp-таблиць), G10 (адмін-функції вчителів: `private.admin_users`, `api_admin_*`; Edge `add-teacher`, `list-teachers`, `reset-teacher-password`, `set-teacher-active` v2), G11 (BIG-пул: `assessment_questions.difficulty`, `assessment_attempt_questions` з RLS, `api_generate_multiplication_bank`, `api_bulk_update_questions`; Edge `generate-multiplication-bank` v1 і `bulk-update-questions` v1 розгорнуто), G11b (`private.public_question_json`, `api_start_attempt` знову віддає `promptText`; перевірено викликом функції). У тілах `api_generate_multiplication_test/bank` і `sample_pool_questions` немає `create temp`/`delete from _g…`.
+- VERIFIED: власник проходив згенерований тест множення як учень (generate + start + submit + finish працюють).
+- VERIFIED (скріншоти власника): регресія G11 — учень бачив порожній текст запитань у всіх тестах (`api_start_attempt` віддавав `prompt` замість `promptText`); виправлено G11b (#88). Екран результату рахував «правильні» як відповіді мінус помилки (−31 із 35); виправлено C14 (#92).
+- У `main` застосунку: #71, #76 (OPERATIONS), #77, #82, #83 (контракт BIG), #86 (G11), #87 (C13), #88 (G11b), #90 (нумерація запитань), #92 (C14: автофокус, Enter → далі, `--keyboard-inset`, правильний підрахунок).
+- PARTIAL / не перевірено: створення BIG-тесту через інтерфейс і проходження його учнем після G11b; нове введення відповіді на справжньому телефоні (360×640, 390×844); `generate-multiplication-test` Edge без логування коду помилки.
+- Відкрито: C15 #91 (мобільні скріншоти Playwright, виконавець GPT, `tools/screenshots/**`).
