@@ -1,5 +1,30 @@
 # Decisions — School Gradebook / Class Journal
 
+## 2026-10-31 — Remove ГР1/ГР2/ГР3 columns
+
+**Decision:** The intended journal design must not contain columns `ГР1`, `ГР2`, or `ГР3`.
+
+**Scope:** This removes those three columns only. It does not, by itself, cancel the previously discussed independent-work, homework, or control/test assessment workflows.
+
+## 2026-10-31 — Journal selected by subject and class
+
+**Decision:** The user selects a journal using a subject/class pair (for example, Algebra — Grade 8). The application must display the journal for that exact subject and class.
+
+## 2026-10-31 — Date opens a lesson window
+
+**Decision:** Selecting a lesson date opens that lesson's window. The student list is positioned on the left; lesson-characteristic columns are positioned on the right.
+
+The required characteristics are:
+1. Homework completion.
+2. Availability of notebook and textbook.
+3. Work at the board.
+4. Behaviour during the lesson.
+5. Not making/writing notes in the notebook.
+6. Leaving the classroom during the lesson, with reason/category (toilet, phone, other).
+7. Late arrival, recorded as N minutes.
+
+**Not yet decided:** exact field value sets and controls, whether notebook and textbook are separate indicators, whether multiple classroom exits/reasons can be recorded, and how qualitative characteristics are evaluated. These must be clarified during data/UI design rather than assumed.
+
 ## 2026-09-27 — Separate project boundary
 
 **Decision:** School Gradebook / Class Journal is an independent project record in AI_CONTEXT_HUB.
