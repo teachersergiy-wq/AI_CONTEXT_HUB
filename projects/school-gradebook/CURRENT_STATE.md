@@ -1,18 +1,40 @@
 # Current State — School Gradebook / Class Journal
 
 **Status:** PARTIAL / HISTORICAL  
-**Last updated:** 2026-09-27
+**Last updated:** 2026-10-31
+
+## CONFIRMED REQUIREMENT UPDATES — 2026-10-31
+
+The user updated the intended journal behavior:
+
+- The `ГР1`, `ГР2`, and `ГР3` columns are rejected and must be removed from the intended design.
+- The user first selects a journal by subject and class (for example, Algebra — Grade 8).
+- The application displays the journal for that specific subject/class.
+- Selecting a date opens the lesson window.
+- The lesson window places the student list on the left and lesson-characteristic columns on the right.
+
+Required student characteristics for each lesson:
+1. Homework completion.
+2. Availability of notebook and textbook.
+3. Work at the board.
+4. Behaviour during the lesson.
+5. Not making/writing notes in the notebook.
+6. Leaving the classroom during the lesson (toilet, phone, other).
+7. Late arrival, recorded in minutes (N minutes).
+
+The exact values and input controls for these characteristics have not yet been specified. In particular, whether notebook and textbook are tracked together or separately, how classroom exits are recorded, and how behaviour/work-at-board are assessed remain design questions.
+
+The removal of ГР1/ГР2/ГР3 does not automatically remove the previously discussed independent-work, homework, or control/test assessment workflows.
 
 ## VERIFIED FROM PRIOR WORK
 
 The project was conceptually defined and a Python GUI implementation was developed during earlier conversations.
 
-Known requirements:
+Other known historical requirements:
 - Python desktop gradebook;
 - planned future Android use;
 - lesson date;
 - absence value `н`;
-- grade/result columns including `ГР1`, `ГР2`, `ГР3`;
 - independent work, homework and control/test categories;
 - subject management;
 - lesson editing/deletion;
