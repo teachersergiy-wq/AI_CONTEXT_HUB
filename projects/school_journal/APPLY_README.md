@@ -1,6 +1,6 @@
 # How to apply
 
-Copy `projects/school_journal/` from this folder into the root of the `AI_CONTEXT_HUB` repository, keeping the paths.
+Copy `projects/school_journal/` from this archive into `AI_CONTEXT_HUB`, keeping paths.
 
-New files: `tasks/T-007.md`, `T-014.md`, `T-023A.md`, `T-023B.md`, `T-024.md`, `T-030.md`.
-Updated: `TASKS.md`, `DECISIONS.md`.
+This is the **correct** 2026-11-02 update (teacher-ready single user; repo public).
+Replaces the incomplete earlier zip that omitted T-006/T-008 and misstated T-023A as owner-only.
