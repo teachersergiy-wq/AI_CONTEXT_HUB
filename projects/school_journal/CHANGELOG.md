@@ -1,5 +1,11 @@
 # Changelog — School Journal
 
+## 2026-11-01 (evening)
+- Owner answered DATA_CONTRACT open questions Q1–Q5.
+- Contract updated: behavior marks (6 + extensible), 12-point scale, no class-history, board work = grade or refused, one teacher per journal.
+- Status of DATA_CONTRACT → READY FOR ACCEPT.
+- App repo now holds the authoritative Ukrainian DATA_CONTRACT.md.
+
 ## 2026-11-01
 - Recorded the owner's answers to T-010 questions (partial).
 - Added DATA_CONTRACT.md v0 draft (PROPOSED).
@@ -11,5 +17,3 @@
 - Project created by merging `school-attendance` and `school-gradebook` (owner decision D1).
 - Recorded decisions D1–D3, the team roles, the priority (class journal first), the requirement that the project is fully free, and the absence-marker decision (variant A).
 - Added `WORKFLOW.md`, `TASKS.md` and the first task cards.
-- Updated `PROJECTS.md`, `HOW_TO_USE_WITH_ANY_AI.md` and the DECISIONS of the two merged projects.
-- Claude could not write to GitHub (403), so the files were delivered as an archive and applied by hand. Repository creation also failed (403); handed to the owner as T-004.
