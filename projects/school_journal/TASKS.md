@@ -11,7 +11,7 @@ Cards exist in `tasks/` for tasks that can start now. Cards for later tasks are 
 | T-002 | Claude | Create `projects/school_journal/`, update `PROJECTS.md`, mark old projects as merged | DONE (2026-10-31, applied by hand) |
 | [T-003](tasks/T-003.md) | Owner | Locate legacy sources (`journal_gui.py`, Google Sheets / Apps Script, Excel / Access), without real student data | PLANNED |
 | [T-004](tasks/T-004.md) | Owner | Create the empty private repository `school_journal` and give the GitHub integration access | PLANNED |
-| [T-005](tasks/T-005.md) | Owner + Claude | Create the separate free Supabase project (owner chooses the region) | PLANNED |
+| [T-005](tasks/T-005.md) | Owner + Claude | Create the separate free Supabase project (owner chooses the region) | DONE (2026-11-01) |
 | [T-006](tasks/T-006.md) | Claude proposes, Owner decides | Choose free hosting for the PWA and a plan against the Supabase auto-pause | PLANNED |
 
 ## Phase 1 — Requirements (journal first)
