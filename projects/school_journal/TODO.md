@@ -1,11 +1,10 @@
 # TODO — School Journal
 
-The detailed board is in `TASKS.md`. Highest priority now (class journal first):
-
-- [ ] Owner: finish T-010 remaining questions and approve DATA_CONTRACT.
-- [ ] Owner: choose the Supabase region so Claude can create the free project (T-005).
-- [ ] Grok: review DATA_CONTRACT.md (implementability, Free plan, RLS).
-- [ ] Claude: finish T-012 roles matrix if needed after contract review.
-- [ ] Claude + owner: choose free hosting (T-006).
-- [ ] Owner: locate legacy sources without real student data (T-003).
-- Later: attendance and meals details (T-011).
+- [x] DATA_CONTRACT ACCEPTED (owner answers Q1–Q5).
+- [ ] Claude/Owner: review and ACCEPT T-020 (branch `grok/T-020`).
+- [ ] Owner: choose Supabase region → create free project (T-005).
+- [ ] After T-005: apply migrations, run seed, verify RLS.
+- [ ] T-021 / further journal schema if needed.
+- [ ] T-023 RLS test matrix.
+- [ ] T-006 free hosting + keep-alive plan.
+- [ ] T-043 backup/export strategy.

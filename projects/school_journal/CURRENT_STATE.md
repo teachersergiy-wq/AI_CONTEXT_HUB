@@ -1,22 +1,22 @@
 # Current State — School Journal
 
-**Status:** PLANNED → requirements almost closed.
+**Status:** Core schema delivered (T-020), awaiting review / ACCEPTED.
 **Last updated:** 2026-11-01 (evening)
 
 ## Repository
-- `teachersergiy-wq/school_journal` exists, PUBLIC, contains `DATA_CONTRACT.md` (updated with owner answers Q1–Q5).
-- T-004 PARTIAL / essentially done (repo created).
+- `teachersergiy-wq/school_journal` exists, PUBLIC.
+- Branch `grok/T-020` contains full core schema + RLS + seed + RPC.
+- DATA_CONTRACT.md ACCEPTED by owner (Q1–Q5 answered).
 
 ## Database
-- Supabase project still not created (T-005, region pending).
-- Free-plan risks unchanged.
+- Supabase project still **not created** (T-005, region pending). Migrations cannot be applied yet.
+- Schema is ready in repo: enums, 11 tables, RLS, helpers, `save_lesson_record` RPC, synthetic seed.
 
 ## Requirements and contract
-- T-010 largely answered.
-- DATA_CONTRACT.md: owner answered Q1–Q5 → **READY FOR ACCEPT**.
-- After ACCEPTED → Grok T-020 (core schema).
+- DATA_CONTRACT.md: **ACCEPTED**.
+- T-020: IN PROGRESS → ready for REVIEW (PR from `grok/T-020`).
 
 ## Next
-1. Owner ACCEPTs DATA_CONTRACT.
-2. Owner chooses Supabase region (T-005).
-3. Grok starts schema on `grok/T-020`.
+1. Claude/Owner: review branch `grok/T-020` and ACCEPT or REWORK.
+2. Owner: choose Supabase region and create free project (T-005).
+3. After project exists: apply migrations + seed; then T-023 (RLS tests) and richer seed (T-024).
