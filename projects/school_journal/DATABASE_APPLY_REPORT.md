@@ -164,13 +164,14 @@ Hub source of truth: `projects/school_journal/DATABASE_APPLY_REPORT.md`.
 - Function `public.handle_new_user()` exists.
 - Trigger `on_auth_user_created` is present on `auth.users` and enabled.
 - Trigger logic creates `public.profiles` row for a newly inserted Auth user, with default role `teacher`; owner promotion is a separate manual action.
-- Pre/post application count at the time of this operation: `auth.users = 0`, `public.profiles = 0`.
-- Therefore **no Auth user has been registered**, no profile exists, and no `role='owner'` update has been run.
+- Pre/post application count at the time of migration application (22:13): `auth.users = 0`, `public.profiles = 0`.
+- **Subsequent result (22:26):** the owner accepted the invitation; the exact Auth account is confirmed and has a password credential; its trigger-created profile exists. The matching profile was updated from `teacher` to `owner` and verified.
 
-### Auth user creation boundary
-- Current Supabase tools expose SQL and migration operations but no Auth Admin invite/create-user action.
-- Owner must create the first account in Dashboard: https://supabase.com/dashboard/project/dtpyvyedcptdkdsowmco/auth/users → Authentication > Users → Add user → Send invitation.
-- After the invitation is accepted, query the exact matching `auth.users.id` and `public.profiles.id`, confirm it belongs to the owner, then update that one profile to `owner`.
+### Auth user creation and owner promotion
+- Current Supabase tools expose SQL and migration operations but no Auth Admin invite/create-user action; the owner used Dashboard → Authentication > Users > Add user > Send invitation.
+- Invitation acceptance and confirmation were verified in `auth.users`; the trigger-created profile was verified; only the exact matching profile row was promoted to `owner` and rechecked.
+- The invite link redirected the browser to `localhost` and produced `ERR_CONNECTION_REFUSED` after confirmation. Account creation, email confirmation, sign-in and password credential were verified independently in the database.
+- The production PWA host is not selected yet (T-006). Set Auth URL Configuration `Site URL` and Redirect URLs once a real deployed URL is available; no URL was guessed.
 - Never create Auth records by inserting into `auth.users` with ad hoc SQL. Never paste passwords, service-role keys or secret keys into chat/Hub/Git.
 
 ### New Advisor finding / action
@@ -180,10 +181,9 @@ Hub source of truth: `projects/school_journal/DATABASE_APPLY_REPORT.md`.
 - No security isolation or Data API behavior is claimed as verified.
 
 ### Remaining steps
-1. Owner invites and completes the first Auth account through Dashboard.
-2. Verify the trigger created profile with role `teacher`; promote only the exact owner UUID to `owner`.
-3. Grok completes least-privilege grants/policy/search_path correction; Claude reviews it.
-4. T-023 RLS test matrix remains pending.
+1. T-006: choose/deploy the free PWA host, then configure Auth `Site URL` and allowed Redirect URLs to the deployed origin/callback.
+2. Grok completes least-privilege grants/policy/search_path correction; Claude reviews it.
+3. T-023 RLS test matrix remains pending.
 
 ### Official references
 - Supabase Users / invitation via Dashboard: https://supabase.com/docs/guides/auth/users
