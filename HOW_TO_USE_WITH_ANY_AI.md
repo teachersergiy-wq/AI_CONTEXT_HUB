@@ -17,12 +17,11 @@ First determine which project the user is working on.
 Current projects:
 - `mustang` — browser/mobile game; GitHub: `teachersergiy-wq/mustang`
 - `tutor-schedule` — private tutor scheduling/lesson-management application; GitHub: `teachersergiy-wq/Rozklad`
-- `school-attendance` — school attendance/meal project; GitHub repository is not yet connected
-- `school-gradebook` — school gradebook / class journal; source repository is not yet connected
+- `school_journal` — School Journal: class journal (gradebook, built first), attendance and meals; GitHub: `teachersergiy-wq/school_journal` (repository to be created by the owner); team: owner, Claude (coordinator), Grok (database), ChatGPT (code); read `projects/school_journal/WORKFLOW.md` first
 - `math-assessment` — mathematics assessment content and Quizizz/Wayground workflow; source repository is not yet connected
+- `school-attendance` and `school-gradebook` — MERGED into `school_journal` on 2026-10-31; historical context only, do not start new work there
 
-Never confuse `tutor-schedule` with `school-attendance`.
-Never confuse `school-gradebook` with `school-attendance`: the former is the gradebook/assessment-record application, while the latter is attendance/meals/reporting.
+Never confuse `tutor-schedule` with `school_journal`.
 
 ## Rule 2 — Read context before work
 
@@ -142,9 +141,9 @@ Format:
 Examples:
 - `...?project=mustang&format=markdown`
 - `...?project=tutor-schedule&format=markdown`
-- `...?project=school-attendance&format=markdown`
-- `...?project=school-gradebook&format=markdown`
 - `...?project=math-assessment&format=markdown`
+
+The `school_journal` project is not yet registered in the public API; read it from GitHub. The slugs `school-attendance` and `school-gradebook` are historical.
 
 The current public API is READ-ONLY. It is not a universal write endpoint.
 

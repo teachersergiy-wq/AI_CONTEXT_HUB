@@ -1,5 +1,12 @@
 # Decisions — School Gradebook / Class Journal
 
+## 2026-10-31 — MERGED into school_journal
+
+**Decision:** this project is merged with School Attendance into one project, **School Journal** (`projects/school_journal/`). This record is kept as historical context only; do not start new work here. The confirmed requirements below are inherited by `school_journal`, where the class journal is the first module to build.
+
+**Supersedes:** the 2026-09-27 "Separate project boundary" decision.
+**Decided by:** owner.
+
 ## 2026-10-31 — Remove ГР1/ГР2/ГР3 columns
 
 **Decision:** The intended journal design must not contain columns `ГР1`, `ГР2`, or `ГР3`.
@@ -30,6 +37,8 @@ The required characteristics are:
 **Decision:** School Gradebook / Class Journal is an independent project record in AI_CONTEXT_HUB.
 
 **Reason:** Its product goal, data model and development lifecycle are separate from Tutor Schedule and School Attendance.
+
+**Status:** SUPERSEDED on 2026-10-31 (merged into school_journal).
 
 ## 2026-09-27 — Supporting Python-learning context
 
