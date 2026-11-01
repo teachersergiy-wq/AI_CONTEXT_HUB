@@ -148,3 +148,43 @@ Hub source of truth: `projects/school_journal/DATABASE_APPLY_REPORT.md`.
 4. Add synthetic journal/lesson/record fixture(s) and verify expected view rows are visible only to the authorized teacher.
 5. Recheck Security/Performance Advisors and Data API behavior after remediation.
 
+
+
+---
+
+## ADDENDUM — Auth profile trigger migration (2026-11-01 22:13 Europe/Kyiv)
+
+### Applied
+- Source: `teachersergiy-wq/school_journal`, branch `main`.
+- File: `supabase/migrations/20261101220000_handle_new_user.sql`.
+- Applied successfully through Supabase migration tooling.
+- Supabase migration history version: `20261101201315`; migration name `20261101220000_handle_new_user`.
+
+### Verified
+- Function `public.handle_new_user()` exists.
+- Trigger `on_auth_user_created` is present on `auth.users` and enabled.
+- Trigger logic creates `public.profiles` row for a newly inserted Auth user, with default role `teacher`; owner promotion is a separate manual action.
+- Pre/post application count at the time of this operation: `auth.users = 0`, `public.profiles = 0`.
+- Therefore **no Auth user has been registered**, no profile exists, and no `role='owner'` update has been run.
+
+### Auth user creation boundary
+- Current Supabase tools expose SQL and migration operations but no Auth Admin invite/create-user action.
+- Owner must create the first account in Dashboard: https://supabase.com/dashboard/project/dtpyvyedcptdkdsowmco/auth/users → Authentication > Users → Add user → Send invitation.
+- After the invitation is accepted, query the exact matching `auth.users.id` and `public.profiles.id`, confirm it belongs to the owner, then update that one profile to `owner`.
+- Never create Auth records by inserting into `auth.users` with ad hoc SQL. Never paste passwords, service-role keys or secret keys into chat/Hub/Git.
+
+### New Advisor finding / action
+- Supabase Security Advisor now reports `public.handle_new_user()` as a SECURITY DEFINER function executable by `anon` and `authenticated`, in addition to the 3 existing role helper functions.
+- Grok should add a corrective migration to revoke unnecessary direct EXECUTE from `PUBLIC`, `anon`, and `authenticated` while retaining the trigger functionality. Also review setting an empty/fixed `search_path` and fully qualifying referenced objects.
+- Existing finding for mutable search_path on `public.set_updated_at()` remains.
+- No security isolation or Data API behavior is claimed as verified.
+
+### Remaining steps
+1. Owner invites and completes the first Auth account through Dashboard.
+2. Verify the trigger created profile with role `teacher`; promote only the exact owner UUID to `owner`.
+3. Grok completes least-privilege grants/policy/search_path correction; Claude reviews it.
+4. T-023 RLS test matrix remains pending.
+
+### Official references
+- Supabase Users / invitation via Dashboard: https://supabase.com/docs/guides/auth/users
+- Supabase user management and profile trigger guidance: https://supabase.com/docs/guides/auth/managing-user-data
