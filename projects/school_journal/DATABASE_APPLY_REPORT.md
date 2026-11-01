@@ -115,3 +115,36 @@ Applied from `teachersergiy-wq/school_journal`, ref `grok/T-020`:
 - `supabase/seed.sql`
 
 Hub source of truth: `projects/school_journal/DATABASE_APPLY_REPORT.md`.
+
+
+---
+
+## ADDENDUM — Lesson-window view migration (2026-11-01 21:57 Europe/Kyiv)
+
+### Applied
+- Source: `teachersergiy-wq/school_journal`, ref `grok/T-020`.
+- File: `supabase/migrations/20261101215100_v_lesson_window.sql`.
+- Applied successfully via Supabase migration tooling.
+- Supabase migration history: version `20261101195655`, name `20261101215100_v_lesson_window`.
+
+### Verified
+- `public.v_lesson_window` exists (`relkind = v`).
+- View options include `security_invoker=true`; Supabase's current Views documentation recommends SECURITY INVOKER to make underlying table RLS policies apply: https://supabase.com/docs/guides/database/views
+- `authenticated` has SELECT on the view.
+- **Unexpected effective privilege:** `anon` also has SELECT on `public.v_lesson_window`, even though this migration explicitly grants SELECT only to `authenticated`. This is consistent with broad default table/view privileges already found in the project. Treat this as a follow-up for Grok's least-privilege grants migration; do not infer the view is anon-safe solely from `security_invoker=true`.
+- The 11 public base tables remain present and RLS remains enabled on all 11.
+- Seed recheck: behavior_marks=6, subjects=2, classes=1, students=10, all 10 students match the synthetic `Учень %` names. Seed was **not rerun**.
+- Current data counts: journals=0, lessons=0, lesson_records=0. The view returned 0 rows in the current database; this is expected while no journal/lesson records exist. A non-empty result test with a synthetic authenticated teacher and lesson is still pending.
+
+### Advisor recheck after the view
+- Security: still 3 SECURITY DEFINER helper functions executable by `anon` and 3 by `authenticated` (`current_app_role()`, `is_class_teacher(uuid)`, `is_journal_teacher(uuid)`); still 1 mutable search_path finding for `set_updated_at()`.
+- Performance: still 2 unindexed FKs (`journals.subject_id`, `lesson_record_behavior.mark_id`); 6 RLS init-plan warnings; 25 multiple permissive policy warnings; 10 unused-index INFO findings.
+- No claim that RLS isolation or Data API behavior has been functionally verified.
+
+### Remaining work
+1. Grok to prepare/review least-privilege grants/default ACLs for tables, views and functions, including removing anon SELECT from the lesson-window view if not intended.
+2. Review and fix SECURITY DEFINER EXECUTE and function search_path findings.
+3. Execute T-023 role matrix (owner, two distinct test teachers, anon).
+4. Add synthetic journal/lesson/record fixture(s) and verify expected view rows are visible only to the authorized teacher.
+5. Recheck Security/Performance Advisors and Data API behavior after remediation.
+
