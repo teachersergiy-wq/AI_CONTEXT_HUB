@@ -1,13 +1,21 @@
 # TODO — School Journal
 
-- [x] DATA_CONTRACT ACCEPTED
-- [x] T-005 Supabase project created
-- [x] T-020 core schema on main (PR #1 merged)
-- [x] Core + RPC applied on live project
-- [ ] Apply `v_lesson_window` + `handle_new_user` (+ seed) on live
-- [ ] First Auth user → role owner
-- [ ] T-023 RLS checklist (docs on grok/T-023-docs)
-- [ ] Choose keep-alive approach (docs/T-006_KEEPALIVE.md)
-- [ ] Decide backup cadence (docs/T-043_BACKUP_EXPORT.md)
-- [ ] T-006 free hosting for PWA (Claude/Codex)
-- [ ] App MVP (ChatGPT) after contract + DB stable
+- [x] DATA_CONTRACT ACCEPTED.
+- [x] T-005 Supabase Free project created (`dtpyvyedcptdkdsowmco`, `eu-central-1`).
+- [x] T-020 merged to `main` (PR #1).
+- [x] Core schema + `save_lesson_record` RPC applied to live Supabase.
+- [x] `v_lesson_window` migration applied (history version `20261101195655`); `security_invoker=true` verified.
+- [x] Synthetic seed present and reverified: 6 behavior marks, 2 subjects, class 8-А, 10 fictional students. No repeat seed execution needed.
+- [x] `handle_new_user` migration applied (history version `20261101201315`); enabled Auth trigger creates profile with role `teacher`.
+- [ ] Owner: invite own first user in [Dashboard Auth Users](https://supabase.com/dashboard/project/dtpyvyedcptdkdsowmco/auth/users) → Add user → Send invitation; complete invite. Last check: 0 Auth users, 0 profiles.
+- [ ] After Auth user exists: verify matching profile row, then promote that exact UUID to `owner`. Never choose a user by recency or promote first registrant blindly.
+- [ ] **Security remediation (priority):** Grok to restrict helper/RPC/trigger function EXECUTE, table/view/sequence/default privileges; fix mutable search_path; set explicit least-privilege RLS policy role targets. Security Advisor now also flags `handle_new_user()` as SECURITY DEFINER executable by anon/authenticated.
+- [ ] Review view grants: `anon` currently has effective SELECT on `v_lesson_window` due broad default ACLs, despite its explicit GRANT being for authenticated.
+- [ ] T-023 RLS matrix: owner, two distinct teachers, anon; verify cross-class/journal isolation and CRUD behavior.
+- [ ] Verify actual Data API HTTP access after grants/policies are corrected.
+- [ ] Add synthetic journal/lesson/record fixtures and verify non-empty `v_lesson_window` output only for authorized teacher; no real student data.
+- [ ] Review performance findings: 2 unindexed foreign keys, 6 RLS init-plan warnings, 25 multiple-permissive-policy warnings; reassess 10 unused-index INFO findings after workload exists.
+- [ ] Review/merge T-023 docs PR; choose free keep-alive approach (T-006).
+- [ ] Define free backup/export cadence (T-043).
+- [ ] T-006 free PWA hosting.
+- [ ] App MVP (ChatGPT) after contract + DB stable and security dependencies accepted.
