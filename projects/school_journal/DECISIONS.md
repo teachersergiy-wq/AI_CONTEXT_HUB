@@ -36,16 +36,21 @@
 **Decision:** the owner accepted the data contract. The journal decisions are recorded in `DATA_CONTRACT.md` of the app repository (sections 1 and 8) and are authoritative there: homework in three levels (done / partial / not done); notebook and textbook as two separate indicators; behaviour as a list of marks (starting set of 6, extendable through a dictionary); exits from the classroom with a reason only (toilet / phone / other, several per lesson, no duration); 12-point grading scale with kinds `current`, `thematic`, `board`; board work is either a grade (`kind = 'board'`) or a refusal flag, never both; no class-move history in stage 1; one teacher per journal; `н` and grades in the lesson window; columns ГР1–ГР3 cancelled.
 **Decided by:** owner (recorded here by the coordinator on 2026-11-02; the Hub previously held these only in the contract).
 
-## 2026-11-02 — Single-user system
-**Decision:** only the owner will use the system (one user). The `teacher` role stays in the schema but is dormant: no teacher accounts will be created. Public signup must be disabled in Supabase Auth (T-007).
-**Consequence:** row-level security is simplified to owner-only; multi-teacher isolation tests are dropped; the roles part of the contract is simplified (T-014).
-**Open:** whether the same applies to attendance and meals (the earlier requirements assumed several submitters: homeroom teachers, kitchen, administration).
+## 2026-11-02 — Single user now, ready for several teachers (variant A)
+**Decision:** for now only the owner uses the system and no teacher accounts are created. The data model and the owner/teacher policies stay, so several teachers can be enabled later (T-050). Public signup must be disabled in Supabase Auth (T-007).
+**Consequence:** the teacher policies are hardened, not removed (T-023A). App code never filters by teacher, only RLS does. Multi-teacher isolation tests wait for T-050.
+**Open:** whether attendance and meals also stay single-user (the earlier requirements assumed several submitters: homeroom teachers, kitchen, administration).
+**Decided by:** owner.
+
+## 2026-11-02 — The repository stays public
+**Decision:** `teachersergiy-wq/school_journal` stays PUBLIC; there will be no switch to a private repository. The app is published for free.
+**Consequence:** the repository must never contain real student data, service-role keys or passwords. The public site exposes the Supabase URL and the public (anon) key by design, so security rests entirely on RLS, disabled signup (T-007) and the hardening migration (T-023A). Secret scanning and branch protection are enabled (T-008).
 **Decided by:** owner.
 
 ## Not decided yet
 - Hosting of the PWA (T-006).
 - How to avoid the Supabase Free auto-pause (a scheduled keep-alive request, or accepting a manual resume); documentation is on branch `grok/T-023-docs`.
-- Whether the repository `school_journal` stays PUBLIC (it is public now; the plan recommended private) or becomes private. Free GitHub Pages needs a public repository on a free plan.
+- Free hosting choice (T-006): GitHub Pages is the natural candidate now that the repository stays public; confirm.
 - Journal uniqueness: `(class_id, subject_id)` or `(class_id, subject_id, teacher_id)` (T-014).
 - Who merges into `main` after a task is accepted.
 - `WORKFLOW.md` v1 is proposed by Claude and applies unless the owner objects.
