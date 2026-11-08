@@ -1,5 +1,10 @@
 # Changelog — School Journal
 
+## 2026-11-08 22:00 (Europe/Kyiv) — T-008 GitHub safeguards verified; T-007 blocked
+- Verified in `teachersergiy-wq/school_journal` settings: secret scanning and push protection were already enabled; `main` now requires pull requests and forbids force pushes (no approval count required).
+- Future commit messages should start with an agent tag such as `[codex]`, `[chatgpt]` or `[grok]`.
+- T-007 remains BLOCKED: opening the project Auth page redirected to Supabase Dashboard sign-in. No Auth setting was changed. Resume after owner signs in, disable public signup, and verify the saved value.
+
 ## 2026-11-01 22:26 (Europe/Kyiv) — First Auth account confirmed and promoted to owner
 - Owner accepted the Dashboard invitation. Verified the exact Auth account exists, email is confirmed, sign-in is recorded, an email identity and password credential exist, and the trigger-created profile is present.
 - Updated only the matching `public.profiles` row from `teacher` to `owner`; re-queried and verified `role='owner'`.
