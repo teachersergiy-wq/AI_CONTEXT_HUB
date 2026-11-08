@@ -8,6 +8,7 @@
 - [x] Synthetic seed present and reverified: 6 behavior marks, 2 subjects, class 8-А, 10 fictional students. No repeat seed execution needed.
 - [x] `handle_new_user` migration applied (history version `20261101201315`); enabled Auth trigger creates profile with role `teacher`.
 - [x] Owner Auth account created through Dashboard invitation; email confirmed, sign-in and password credential verified; trigger-created profile exists and exact matching profile promoted to `owner` (2026-11-01).
+- [ ] **T-007 (P0, BLOCKED):** disable public signup in Supabase Auth after Dashboard sign-in; setting not changed or verified yet.
 - [ ] Correct Supabase Auth `Site URL` and Redirect URLs after T-006 selects/deploys the actual free PWA host; invite link currently redirects browser to `localhost` even though Auth registration succeeded.
 - [ ] **Security remediation (priority):** Grok to restrict helper/RPC/trigger function EXECUTE, table/view/sequence/default privileges; fix mutable search_path; set explicit least-privilege RLS policy role targets. Security Advisor now also flags `handle_new_user()` as SECURITY DEFINER executable by anon/authenticated.
 - [ ] Review view grants: `anon` currently has effective SELECT on `v_lesson_window` due broad default ACLs, despite its explicit GRANT being for authenticated.
@@ -17,5 +18,6 @@
 - [ ] Review performance findings: 2 unindexed foreign keys, 6 RLS init-plan warnings, 25 multiple-permissive-policy warnings; reassess 10 unused-index INFO findings after workload exists.
 - [ ] Review/merge T-023 docs PR; choose free keep-alive approach (T-006).
 - [ ] Define free backup/export cadence (T-043).
+- [x] **T-008:** GitHub secret scanning and push protection enabled; `main` requires PRs and forbids force pushes (VERIFIED 2026-11-08).
 - [ ] T-006 free PWA hosting.
 - [ ] App MVP (ChatGPT) after contract + DB stable and security dependencies accepted.
