@@ -52,6 +52,17 @@
 **Consequence:** the migration is applied by one party only (Claude), so the repository and the database do not drift. T-030 and the answers for T-014 do not wait for stage 1.
 **Decided by:** owner.
 
+## 2026-11-14 — T-007 and T-023A completed
+**T-007 — Supabase Auth:** The owner's screenshot showed “Allow new users to sign up”, “Allow manual linking”, and “Allow anonymous sign-ins” disabled; “Confirm email” enabled; and the Save button inactive. This verified that the settings were saved. In the Data API settings screenshot, the exposed schemas were `graphql_public` and `public`; `private` was not exposed. The owner disabled “Automatically expose new tables”.
+
+**T-023A — security hardening:** Pull request #2 in `teachersergiy-wq/school_journal` was merged after Claude's verdict ACCEPTED at head `06dddbb`. On 2026-11-14, Claude applied migration `20261101232000_security_hardening` to the live Supabase project `dtpyvyedcptdkdsowmco` through the Supabase integration. The migration history records version `20261114200113`.
+
+**Verified results:** Catalog reads and tests run in a transaction that was rolled back showed that `anon` has no privileges on any table, view, or the `public` schema. Row-Level Security is enabled on all 11 tables, and all 31 policies apply only to `authenticated`. Helper functions are in the `private` schema; no old copies remain in `public`. Changing a role through the API is rejected by the column privilege, including for the owner. The owner can see 10 students and the owner's own profile; a user without a profile sees zero rows. The Security Advisor reports one warning: protection against compromised passwords is disabled and may be unavailable on the Free plan.
+
+**Rule for future migrations:** After “Automatically expose new tables” was disabled, newly created tables and functions owned by `postgres` do not grant privileges to `authenticated` or `service_role` by default. Migrations that need access must specify grants, Row-Level Security, and policies explicitly.
+
+**Recorded by:** Claude from the owner's screenshot and the verified migration and database checks.
+ 
 ## Not decided yet
 - Hosting of the PWA (T-006).
 - How to avoid the Supabase Free auto-pause (a scheduled keep-alive request, or accepting a manual resume); documentation is on branch `grok/T-023-docs`.
