@@ -47,6 +47,11 @@
 **Consequence:** the repository must never contain real student data, service-role keys or passwords. The public site exposes the Supabase URL and the public (anon) key by design, so security rests entirely on RLS, disabled signup (T-007) and the hardening migration (T-023A). Secret scanning and branch protection are enabled (T-008).
 **Decided by:** owner.
 
+## 2026-11-12 — Stage 1 "Close security" approved
+**Decision:** the owner approved this order of work: (1) Owner: T-007, disable public signup in Supabase Auth, and check in Settings → API that the schema `private` is not exposed; the owner sends Claude a screenshot of the Auth settings without any keys. (2) Grok: pull request from `grok/T-023A` into `main` with a handoff; nothing is applied to the live database before the verdict ACCEPTED. (3) Claude: formal verdict on the pull request. (4) Owner: merges the pull request and allows applying the migration. (5) Claude applies the migration to the live Supabase project through the connected integration, only after the merge and the verdict ACCEPTED, then runs the Security Advisor. (6) Grok and Claude: T-023B, including the attempt of a non-owner role change, which must fail on the column privilege, tested in a rolled-back transaction. (7) Claude updates the state in the Hub.
+**Consequence:** the migration is applied by one party only (Claude), so the repository and the database do not drift. T-030 and the answers for T-014 do not wait for stage 1.
+**Decided by:** owner.
+
 ## Not decided yet
 - Hosting of the PWA (T-006).
 - How to avoid the Supabase Free auto-pause (a scheduled keep-alive request, or accepting a manual resume); documentation is on branch `grok/T-023-docs`.
