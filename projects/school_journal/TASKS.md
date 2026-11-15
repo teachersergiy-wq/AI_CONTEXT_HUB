@@ -13,6 +13,7 @@ Last reviewed by Claude: 2026-11-02.
 | [T-004](tasks/T-004.md) | Owner | Create the repository `school_journal` | DONE (2026-11-01; stays PUBLIC, see DECISIONS) |
 | [T-005](tasks/T-005.md) | Owner + Claude | Create the separate free Supabase project | DONE (2026-11-01) |
 | [T-006](tasks/T-006.md) | Claude proposes, Owner decides | Free hosting and keep-alive | PLANNED (docs on branch `grok/T-023-docs`) |
+| — | Owner + Claude | Site URL and redirect URLs | PLANNED (after the hosting choice; the invitation link currently points to localhost) |
 | [T-007](tasks/T-007.md) | Owner | Disable public signup in Supabase Auth | BLOCKED (P0; Dashboard sign-in needed) |
 | [T-008](tasks/T-008.md) | Owner | Public-repository safeguards: secret scanning, push protection, branch protection on `main` | DONE (VERIFIED 2026-11-08) |
 
@@ -30,8 +31,8 @@ Last reviewed by Claude: 2026-11-02.
 |---|---|---|
 | T-020 | Core schema, RPC, view, Auth trigger, starter seed | REWORK (applied to the live database before review; security findings of 2026-11-02) |
 | T-021 | Journal schema | Delivered inside T-020; REWORK together with it |
-| [T-023A](tasks/T-023A.md) | **Security hardening migration (P0), keeps teacher policies** | PLANNED |
-| [T-023B](tasks/T-023B.md) | RLS verification: owner, anon, non-owner | PLANNED (after T-023A applied) |
+| [T-023A](tasks/T-023A.md) | **Security hardening migration (P0), keeps teacher policies** | IN PROGRESS (migration and `supabase/tests/security.sql` are on branch `grok/T-023A`; pull request pending; not applied) |
+| [T-023B](tasks/T-023B.md) | RLS verification: owner, anon, non-owner | PLANNED (after T-023A is applied) |
 | [T-024](tasks/T-024.md) | Synthetic demo data | PARTIAL |
 | T-022 | Attendance and meals schema | DEFERRED (after T-011) |
 | T-025 | Report views | DEFERRED (after T-022) |
