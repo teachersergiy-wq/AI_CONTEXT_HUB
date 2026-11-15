@@ -13,8 +13,8 @@ Last reviewed by Claude: 2026-11-02.
 | [T-004](tasks/T-004.md) | Owner | Create the repository `school_journal` | DONE (2026-11-01; stays PUBLIC, see DECISIONS) |
 | [T-005](tasks/T-005.md) | Owner + Claude | Create the separate free Supabase project | DONE (2026-11-01) |
 | [T-006](tasks/T-006.md) | Claude proposes, Owner decides | Free hosting and keep-alive | PLANNED (docs on branch `grok/T-023-docs`) |
-| [T-007](tasks/T-007.md) | Owner | Disable public signup in Supabase Auth | PLANNED (P0) |
-| [T-008](tasks/T-008.md) | Owner | Public-repository safeguards: secret scanning, push protection, branch protection on `main` | PLANNED |
+| [T-007](tasks/T-007.md) | Owner | Disable public signup in Supabase Auth | BLOCKED (P0; Dashboard sign-in needed) |
+| [T-008](tasks/T-008.md) | Owner | Public-repository safeguards: secret scanning, push protection, branch protection on `main` | DONE (VERIFIED 2026-11-08) |
 
 ## Phase 1 — Requirements (journal first)
 | ID | Who | Task | Status |

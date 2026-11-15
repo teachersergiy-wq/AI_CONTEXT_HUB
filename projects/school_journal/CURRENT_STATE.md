@@ -1,11 +1,12 @@
 # Current State — School Journal
 
-**Status:** T-020 merged. Core schema, RPC, lesson-window view and Auth profile trigger are applied to the live Supabase Free project. Starter synthetic seed is verified. First owner Auth account is created, email confirmed, profile exists and role `owner` is verified. T-023 RLS checks remain pending.
-**Last updated:** 2026-11-01 22:26 (Europe/Kyiv)
+**Status:** T-020 merged. Core schema, RPC, lesson-window view and Auth profile trigger are applied to the live Supabase Free project. Starter synthetic seed is verified. First owner Auth account is created, email confirmed, profile exists and role `owner` is verified. T-008 GitHub safeguards are VERIFIED. T-007 public signup setting is BLOCKED pending Supabase Dashboard sign-in. T-023 RLS checks remain pending.
+**Last updated:** 2026-11-08 22:00 (Europe/Kyiv)
 
 ## Repository
 - `teachersergiy-wq/school_journal` — PUBLIC.
 - `main` contains T-020: schema, RLS, RPC, `v_lesson_window`, `handle_new_user`, seed and docs.
+- T-008 GitHub safeguards (VERIFIED, 2026-11-08): Secret scanning and push protection are enabled; `main` requires a pull request, forbids force pushes, and has no required approvals. Confirmed in repository settings. Secret scanning/push protection were already active; branch protection rule was created. Start future commit messages with an agent tag such as `[codex]`.
 - PR #1 merged (squash).
 - Branch `grok/T-023-docs` + PR contains RLS test checklist, keep-alive and backup/export docs.
 
@@ -36,6 +37,7 @@
 Detailed SQL and Advisor findings: [DATABASE_APPLY_REPORT.md](DATABASE_APPLY_REPORT.md).
 
 ## Auth / first owner account
+- T-007 public signup remains BLOCKED / not verified: the Supabase Dashboard redirected to its sign-in page. No Auth setting was changed. Resume after the owner signs in; then disable new-user signup and verify the saved setting.
 - The `on_auth_user_created` trigger remains enabled and creates a matching `public.profiles` row with default role `teacher`.
 - **VERIFIED:** the owner accepted the invitation; email is confirmed, sign-in and password credential exist, matching profile was created, and the exact matching profile is now `role='owner'`.
 - The invite link redirected the browser to `localhost`, producing `ERR_CONNECTION_REFUSED`. This happened after the Auth user was confirmed; it did not prevent registration or owner promotion.
