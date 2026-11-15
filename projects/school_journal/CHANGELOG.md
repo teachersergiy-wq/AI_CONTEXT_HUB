@@ -1,5 +1,12 @@
 # Changelog — School Journal
 
+## 2026-11-14 — T-007 and T-023A completed
+- The owner's Supabase Auth screenshot verified that new-user signup, manual linking, and anonymous sign-ins are disabled, email confirmation is enabled, and Save is inactive. The Data API screenshot showed `graphql_public` and `public` exposed, with `private` not exposed. The owner disabled “Automatically expose new tables”.
+- School Journal pull request #2 was merged after Claude's verdict ACCEPTED at head `06dddbb`. Claude applied migration `20261101232000_security_hardening` to live project `dtpyvyedcptdkdsowmco` through the Supabase integration. Migration history version: `20261114200113`.
+- Catalog reads and tests in a rolled-back transaction verified that `anon` has no privileges on any table, view, or the `public` schema; Row-Level Security is enabled on all 11 tables; and all 31 policies apply only to `authenticated`. Helper functions are in `private`, with no old copies in `public`. Role changes through the API are rejected by the column privilege, including for the owner.
+- The owner can see 10 students and the owner's own profile; a user without a profile sees zero rows. The Security Advisor reports one warning: protection against compromised passwords is disabled and may be unavailable on the Free plan.
+- With “Automatically expose new tables” disabled, newly created tables and functions owned by `postgres` do not grant privileges to `authenticated` or `service_role` by default. Future migrations must explicitly grant needed privileges, enable Row-Level Security, and define policies.
+
 ## 2026-11-08 22:00 (Europe/Kyiv) — T-008 GitHub safeguards verified; T-007 blocked
 - Verified in `teachersergiy-wq/school_journal` settings: secret scanning and push protection were already enabled; `main` now requires pull requests and forbids force pushes (no approval count required).
 - Future commit messages should start with an agent tag such as `[codex]`, `[chatgpt]` or `[grok]`.
