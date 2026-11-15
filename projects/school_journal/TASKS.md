@@ -14,7 +14,7 @@ Last reviewed by Claude: 2026-11-02.
 | [T-005](tasks/T-005.md) | Owner + Claude | Create the separate free Supabase project | DONE (2026-11-01) |
 | [T-006](tasks/T-006.md) | Claude proposes, Owner decides | Free hosting and keep-alive | PLANNED (docs on branch `grok/T-023-docs`) |
 | — | Owner + Claude | Site URL and redirect URLs | PLANNED (after the hosting choice; the invitation link currently points to localhost) |
-| [T-007](tasks/T-007.md) | Owner | Disable public signup in Supabase Auth | BLOCKED (P0; Dashboard sign-in needed) |
+| [T-007](tasks/T-007.md) | Owner | Disable public signup in Supabase Auth | DONE (verified 2026-11-14 from the owner's screenshot: new-user signup, manual linking, and anonymous sign-ins disabled; email confirmation enabled; Save inactive) |
 | [T-008](tasks/T-008.md) | Owner | Public-repository safeguards: secret scanning, push protection, branch protection on `main` | DONE (VERIFIED 2026-11-08) |
 
 ## Phase 1 — Requirements (journal first)
@@ -31,9 +31,9 @@ Last reviewed by Claude: 2026-11-02.
 |---|---|---|
 | T-020 | Core schema, RPC, view, Auth trigger, starter seed | REWORK (applied to the live database before review; security findings of 2026-11-02) |
 | T-021 | Journal schema | Delivered inside T-020; REWORK together with it |
-| [T-023A](tasks/T-023A.md) | **Security hardening migration (P0), keeps teacher policies** | IN PROGRESS (migration and `supabase/tests/security.sql` are on branch `grok/T-023A`; pull request pending; not applied) |
-| [T-023B](tasks/T-023B.md) | RLS verification: owner, anon, non-owner | PLANNED (after T-023A is applied) |
-| [T-024](tasks/T-024.md) | Synthetic demo data | PARTIAL |
+| [T-023A](tasks/T-023A.md) | **Security hardening migration (P0), keeps teacher policies** | DONE (applied 2026-11-14; `20261101232000_security_hardening`; history version `20261114200113`) |
+| [T-023B](tasks/T-023B.md) | Row-Level Security verification: owner, anonymous user, non-owner | IN PROGRESS (branch `grok/T-023B`; Claude's checks passed for owner, anonymous user, user without a profile, and role change; after T-024 demo data, still verify `save_lesson_record` and `v_lesson_window` with data) |
+| [T-024](tasks/T-024.md) | Synthetic demo data | IN REVIEW (branch `grok/T-024`; Claude accepted the contents; pull request not opened; not applied; includes the `board_exclusivity` migration) |
 | T-022 | Attendance and meals schema | DEFERRED (after T-011) |
 | T-025 | Report views | DEFERRED (after T-022) |
 | T-050 | Enable several teachers: custom SMTP, invitations, owner screen to assign journals, two-teacher RLS test, privacy requirements | DEFERRED (when the owner decides) |
@@ -42,7 +42,7 @@ Last reviewed by Claude: 2026-11-02.
 | ID | Task | Status |
 |---|---|---|
 | [T-030](tasks/T-030.md) | PWA skeleton on mock data | PLANNED (can start now) |
-| T-031 | MVP-1 journal: journals list and lesson dates from Supabase | BLOCKED until T-023A is applied |
+| T-031 | MVP-1 journal: journals list and lesson dates from Supabase | PLANNED (not blocked by security; waiting for T-024 demo data) |
 | T-032 | MVP-1 journal: lesson window with the characteristics, `н`, save through RPC | BLOCKED until T-031 |
 | T-033 | MVP-1 journal: edit/delete lesson, context menu, assessments, export | BLOCKED until T-032 |
 | T-034 | MVP-2: attendance submission | DEFERRED |
