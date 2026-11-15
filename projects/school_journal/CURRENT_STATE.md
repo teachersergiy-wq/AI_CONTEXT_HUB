@@ -1,6 +1,6 @@
 # Current State — School Journal
 
-**Status:** T-020 core schema, RPC, lesson-window view, Auth profile trigger, starter synthetic seed, and T-023A security hardening migration are applied to the live Supabase Free project. T-007 is DONE. T-023B verification is IN PROGRESS; T-024 demo data is IN REVIEW. T-031 is waiting for T-024 demo data, not blocked by security.
+**Status:** T-020 core schema, RPC, lesson-window view, Auth profile trigger, starter synthetic seed, and T-023A security hardening migration are applied to the live Supabase Free project. T-007 and T-023A are DONE. T-023B verification is IN PROGRESS; T-024 demo data is IN REVIEW. T-031 is waiting for T-024 demo data, not blocked by security.
 **Last updated:** 2026-11-14 (Europe/Kyiv)
 
 ## Repository
