@@ -62,7 +62,12 @@
 **Rule for future migrations:** After “Automatically expose new tables” was disabled, newly created tables and functions owned by `postgres` do not grant privileges to `authenticated` or `service_role` by default. Migrations that need access must specify grants, Row-Level Security, and policies explicitly.
 
 **Recorded by:** Claude from the owner's screenshot and the verified migration and database checks.
- 
+
+## 2026-11-15 — Assessment kinds (part of T-014)
+**Decision:** the owner chose to add two assessment kinds: `independent` (самостійна робота) and `control` (контрольна робота). The full list is `current`, `independent`, `control`, `thematic` (topic summary), `board`. The 12-point scale applies to all kinds; the rule "grade or refusal at the board" applies only to `board`.
+**Consequence:** a small migration adds the two enum values (Grok); one paragraph is added to `DATA_CONTRACT.md`; the app shows five labels (Codex).
+**Decided by:** owner.
+
 ## Not decided yet
 - Hosting of the PWA (T-006).
 - How to avoid the Supabase Free auto-pause (a scheduled keep-alive request, or accepting a manual resume); documentation is on branch `grok/T-023-docs`.

@@ -23,7 +23,7 @@ Last reviewed by Claude: 2026-11-02.
 | [T-010](tasks/T-010.md) | Claude + Owner | Open journal questions | DONE in the contract (2026-11-01); UI points (edit/delete, context menu) still open |
 | [T-012](tasks/T-012.md) | Claude | Roles and permissions matrix | PARTIAL (contract section 5; to be simplified for one user in T-014) |
 | [T-013](tasks/T-013.md) | Claude (Grok reviews) | `DATA_CONTRACT.md` v0 | DONE (ACCEPTED 2026-11-01) |
-| [T-014](tasks/T-014.md) | Claude + Owner | Contract v1.1: teacher-ready single user, journal uniqueness, assessment kinds, record decisions | PLANNED |
+| [T-014](tasks/T-014.md) | Claude + Owner | Contract v1.1: teacher-ready single user, journal uniqueness, assessment kinds, record decisions | PLANNED (види оцінок вирішено 2026-11-15; відкриті: унікальність журналу) |
 | [T-011](tasks/T-011.md) | Claude + Owner | Attendance and meals details | DEFERRED |
 
 ## Phase 2 — Database (Grok)
@@ -50,7 +50,7 @@ Last reviewed by Claude: 2026-11-02.
 
 ## Phase 4 — Quality and launch
 | ID | Who | Task | Status |
-|---|---|---|---|
+|---|---|---|
 | T-040 | Claude | End-to-end acceptance on synthetic data | PLANNED |
 | T-041 | Claude + Grok | Security and personal-data review | PLANNED |
 | T-042 | Owner | Pilot in one class | PLANNED |
