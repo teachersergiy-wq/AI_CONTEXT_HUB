@@ -63,6 +63,15 @@
 
 **Recorded by:** Claude from the owner's screenshot and the verified migration and database checks.
  
+## 2026-11-15 — Assessment kinds (part of T-014)
+**Decision:** the assessment kinds are `current`, `independent`, `control`, `thematic`, and `board`, with `current` as the default. All kinds use the 1–12 scale. The rule that a board assessment and refusal are mutually exclusive applies only to `board`.
+**Decided by:** owner.
+
+## 2026-11-16 — Journal uniqueness (part of T-014)
+**Decision:** a journal is unique per (class, subject, teacher), as in the current database constraint. No schema change.
+**Consequence:** several teachers can later have separate journals for the same class and subject; with one user it is one journal. The journal picker must show the teacher's name when more than one journal is visible for a class and subject (T-050).
+**Decided by:** owner.
+
 ## Not decided yet
 - Hosting of the PWA (T-006).
 - How to avoid the Supabase Free auto-pause (a scheduled keep-alive request, or accepting a manual resume); documentation is on branch `grok/T-023-docs`.
