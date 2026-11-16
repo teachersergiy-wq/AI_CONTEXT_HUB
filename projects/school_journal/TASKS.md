@@ -2,7 +2,7 @@
 
 Priority: **class journal first**, attendance and meals second. Everything must be free. Single user for now, ready for several teachers; repository stays public.
 Status legend: PLANNED, IN PROGRESS, REVIEW, ACCEPTED, REWORK, BLOCKED, DEFERRED, DONE, PARTIAL.
-Last reviewed by Claude: 2026-11-02.
+Last reviewed by Claude: 2026-11-16.
 
 ## Phase 0 — Decisions and foundation
 | ID | Who | Task | Status |
@@ -41,7 +41,7 @@ Last reviewed by Claude: 2026-11-02.
 ## Phase 3 — Application (ChatGPT or Codex)
 | ID | Task | Status |
 |---|---|---|
-| [T-030](tasks/T-030.md) | PWA skeleton on mock data | PLANNED (can start now) |
+| [T-030](tasks/T-030.md) | PWA skeleton on mock data | DONE (PR #3 merged; CI passed) |
 | T-031 | MVP-1 journal: journals list and lesson dates from Supabase | PLANNED (not blocked by security; waiting for T-024 demo data) |
 | T-032 | MVP-1 journal: lesson window with the characteristics, `н`, save through RPC | BLOCKED until T-031 |
 | T-033 | MVP-1 journal: edit/delete lesson, context menu, assessments, export | BLOCKED until T-032 |
