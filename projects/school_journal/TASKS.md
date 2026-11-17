@@ -2,7 +2,7 @@
 
 Priority: **class journal first**, attendance and meals second. Everything must be free. Single user for now, ready for several teachers; repository stays public.
 Status legend: PLANNED, IN PROGRESS, REVIEW, ACCEPTED, REWORK, BLOCKED, DEFERRED, DONE, PARTIAL.
-Last reviewed by Claude: 2026-11-02.
+Last reviewed by Claude: 2026-11-16.
 
 ## Phase 0 — Decisions and foundation
 | ID | Who | Task | Status |
@@ -23,7 +23,7 @@ Last reviewed by Claude: 2026-11-02.
 | [T-010](tasks/T-010.md) | Claude + Owner | Open journal questions | DONE in the contract (2026-11-01); UI points (edit/delete, context menu) still open |
 | [T-012](tasks/T-012.md) | Claude | Roles and permissions matrix | PARTIAL (contract section 5; to be simplified for one user in T-014) |
 | [T-013](tasks/T-013.md) | Claude (Grok reviews) | `DATA_CONTRACT.md` v0 | DONE (ACCEPTED 2026-11-01) |
-| [T-014](tasks/T-014.md) | Claude + Owner | Contract v1.1: teacher-ready single user, journal uniqueness, assessment kinds, record decisions | PLANNED |
+| [T-014](tasks/T-014.md) | Claude + Owner | Contract v1.1: teacher-ready single user, journal uniqueness, assessment kinds, record decisions | IN PROGRESS (види оцінок і унікальність журналу вирішено; текст v1.1 PROPOSED 2026-11-16, чекає підтвердження власника) |
 | [T-011](tasks/T-011.md) | Claude + Owner | Attendance and meals details | DEFERRED |
 
 ## Phase 2 — Database (Grok)
@@ -41,7 +41,7 @@ Last reviewed by Claude: 2026-11-02.
 ## Phase 3 — Application (ChatGPT or Codex)
 | ID | Task | Status |
 |---|---|---|
-| [T-030](tasks/T-030.md) | PWA skeleton on mock data | PLANNED (can start now) |
+| [T-030](tasks/T-030.md) | PWA skeleton on mock data | DONE (PR #3 merged; CI passed) |
 | T-031 | MVP-1 journal: journals list and lesson dates from Supabase | PLANNED (not blocked by security; waiting for T-024 demo data) |
 | T-032 | MVP-1 journal: lesson window with the characteristics, `н`, save through RPC | BLOCKED until T-031 |
 | T-033 | MVP-1 journal: edit/delete lesson, context menu, assessments, export | BLOCKED until T-032 |
