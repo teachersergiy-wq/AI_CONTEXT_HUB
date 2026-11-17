@@ -2,7 +2,7 @@
 
 Priority: **class journal first**, attendance and meals second. Everything must be free. Single user for now, ready for several teachers; repository stays public.
 Status legend: PLANNED, IN PROGRESS, REVIEW, ACCEPTED, REWORK, BLOCKED, DEFERRED, DONE, PARTIAL.
-Last reviewed by Claude: 2026-11-16.
+Last reviewed by Claude: 2026-11-17.
 
 ## Phase 0 — Decisions and foundation
 | ID | Who | Task | Status |
@@ -12,7 +12,7 @@ Last reviewed by Claude: 2026-11-16.
 | [T-003](tasks/T-003.md) | Owner | Locate legacy sources, without real student data | PLANNED |
 | [T-004](tasks/T-004.md) | Owner | Create the repository `school_journal` | DONE (2026-11-01; stays PUBLIC, see DECISIONS) |
 | [T-005](tasks/T-005.md) | Owner + Claude | Create the separate free Supabase project | DONE (2026-11-01) |
-| [T-006](tasks/T-006.md) | Claude proposes, Owner decides | Free hosting and keep-alive | PLANNED (docs on branch `grok/T-023-docs`) |
+| [T-006](tasks/T-006.md) | Claude proposes, Owner decides | Free hosting and keep-alive | IN PROGRESS (Pages + keep-alive рішено (ops.keepalive); чекає міграцію Grok і кроки Власника) |
 | — | Owner + Claude | Site URL and redirect URLs | PLANNED (after the hosting choice; the invitation link currently points to localhost) |
 | [T-007](tasks/T-007.md) | Owner | Disable public signup in Supabase Auth | DONE (verified 2026-11-14 from the owner's screenshot: new-user signup, manual linking, and anonymous sign-ins disabled; email confirmation enabled; Save inactive) |
 | [T-008](tasks/T-008.md) | Owner | Public-repository safeguards: secret scanning, push protection, branch protection on `main` | DONE (VERIFIED 2026-11-08) |
@@ -41,8 +41,8 @@ Last reviewed by Claude: 2026-11-16.
 ## Phase 3 — Application (ChatGPT or Codex)
 | ID | Task | Status |
 |---|---|---|
-| [T-030](tasks/T-030.md) | PWA skeleton on mock data | DONE (PR #3 merged; CI passed) |
-| T-031 | MVP-1 journal: journals list and lesson dates from Supabase | PLANNED (not blocked by security; waiting for T-024 demo data) |
+| [T-030](tasks/T-030.md) | PWA skeleton on mock data | DONE (PR #3 merged 2026-11-15; CI passed) |
+| T-031 | MVP-1 journal: journals list and lesson dates from Supabase | PLANNED (without a library; not blocked by security; waiting for T-024 demo data) |
 | T-032 | MVP-1 journal: lesson window with the characteristics, `н`, save through RPC | BLOCKED until T-031 |
 | T-033 | MVP-1 journal: edit/delete lesson, context menu, assessments, export | BLOCKED until T-032 |
 | T-034 | MVP-2: attendance submission | DEFERRED |

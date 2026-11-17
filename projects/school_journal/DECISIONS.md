@@ -72,10 +72,16 @@
 **Consequence:** several teachers can later have separate journals for the same class and subject; with one user it is one journal. The journal picker must show the teacher's name when more than one journal is visible for a class and subject (T-050).
 **Decided by:** owner.
 
+## 2026-11-17 — Supabase access without a library; hosting on GitHub Pages
+**Decision:** the app talks to Supabase through its own small zero-dependency client (no `supabase-js`). Hosting is GitHub Pages, deployed by GitHub Actions, with a scheduled keep-alive against the Supabase Free auto-pause. The keep-alive method is not decided yet.
+**Consequence:** T-031 and T-032 use `src/data/supabase-client.js`; a Pages workflow is added (T-006); the first deployment uses mock data; Supabase Auth `Site URL` is set to the Pages address after deployment.
+**Decided by:** owner.
+
+## 2026-11-17 — Keep-alive method: ops.keepalive()
+**Decision:** the owner chose a tiny function against the Supabase Free auto-pause. It lives in a separate schema `ops` (not `public`), is SECURITY INVOKER, reads only the system catalog, and is the only thing `anon` may execute. A scheduled GitHub Actions workflow calls it every 3 days.
+**Consequence:** a deliberate, documented exception to "anon has nothing"; `public` stays fully closed to `anon`. The owner adds `ops` to the exposed schemas in Data API settings after the migration is applied.
+**Decided by:** owner.
+
 ## Not decided yet
-- Hosting of the PWA (T-006).
-- How to avoid the Supabase Free auto-pause (a scheduled keep-alive request, or accepting a manual resume); documentation is on branch `grok/T-023-docs`.
-- Free hosting choice (T-006): GitHub Pages is the natural candidate now that the repository stays public; confirm.
-- Journal uniqueness: `(class_id, subject_id)` or `(class_id, subject_id, teacher_id)` (T-014).
 - Who merges into `main` after a task is accepted.
 - `WORKFLOW.md` v1 is proposed by Claude and applies unless the owner objects.
