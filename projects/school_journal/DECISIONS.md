@@ -82,6 +82,10 @@
 **Consequence:** a deliberate, documented exception to "anon has nothing"; `public` stays fully closed to `anon`. The owner adds `ops` to the exposed schemas in Data API settings after the migration is applied.
 **Decided by:** owner.
 
+## 2026-11-21 — DATA_CONTRACT v1.1 accepted
+**Decision:** the owner confirmed contract v1.1 (assessment kinds, journal uniqueness, teacher-ready single-user access model, public repository notes).
+**Decided by:** owner.
+
 ## Not decided yet
 - Who merges into `main` after a task is accepted.
 - `WORKFLOW.md` v1 is proposed by Claude and applies unless the owner objects.
