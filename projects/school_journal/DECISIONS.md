@@ -86,6 +86,15 @@
 **Decision:** the owner confirmed contract v1.1 (assessment kinds, journal uniqueness, teacher-ready single-user access model, public repository notes).
 **Decided by:** owner.
 
+## 2026-11-22 — Schedule and journal navigation plan approved
+**Decision:** the owner approved the plan for the daily work area: today's schedule on the home screen, week view, lesson sequence per class and subject, journal grid (students by dates) and navigation Journals → Class → Subject → Journal. Lessons are generated in advance for a whole semester from the weekly schedule. There is one bell schedule per semester with per-date exceptions (shortened lessons). Periods are semesters only. A table of non-teaching days (holidays, breaks inside and between semesters) prevents lesson creation. Cancelled and replaced lessons do not count in the continuous lesson number. The teacher alone chooses which assessment goes into a journal cell, or none. Control and independent works are shown as highlighted date columns.
+**Replacement rules:** (1) when the owner is replaced, the lesson is removed from the owner's schedule but stays visible as replaced; its planned topic moves to the next planned lesson of the same journal and later topics shift one lesson later; (2) an extra lesson in the same journal takes the next planned topic and later topics shift one lesson earlier; (3) a lesson the owner teaches for another teacher is an extra lesson with its own topic, outside the plan, recorded in a journal of that class and subject under the owner (default, to be confirmed). Held lessons are never changed by shifting.
+**Decided by:** owner.
+
+## 2026-11-23 — Absence, cancelled lessons and substitution rules confirmed
+**Decision:** (1) A student marked absent cannot have assessments for that lesson, and a student with assessments cannot be marked absent; the application enforces this and shows a friendly message. (2) A cancelled lesson behaves like a replaced one: it is not counted in the continuous lesson number and does not consume a planned topic. (3) A lesson the owner teaches for another teacher is recorded in a journal for that class and subject under the owner's name, with its own topic, outside the plan; a "conducted by" field is considered with T-050.
+**Decided by:** owner.
+
 ## Not decided yet
 - Who merges into `main` after a task is accepted.
 - `WORKFLOW.md` v1 is proposed by Claude and applies unless the owner objects.
