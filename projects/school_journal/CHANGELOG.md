@@ -1,5 +1,14 @@
 # Changelog — School Journal
 
+## 2026-11-21 — DATA_CONTRACT v1.1, database verification, demo data, and Pages
+- The owner confirmed DATA_CONTRACT v1.1 on 2026-11-21. The acceptance status update in the app repository is proposed in PR #10.
+- The live database has nine applied migrations: `20261101190138_core_schema`, `20261101190500_save_lesson_record_rpc`, `20261101215100_v_lesson_window`, `20261101220000_handle_new_user`, `20261101232000_security_hardening` (2026-11-14), `20261114220000_board_exclusivity` (2026-11-17), `20261117010000_assessment_kinds_independent_control` (2026-11-17), `20261118000000_revoke_trigger_fn_execute` (2026-11-21), and `20261118000100_keepalive` (2026-11-21).
+- T-024 demo data was applied on 2026-11-17: one journal, five lessons prefixed `[ДЕМО]`, 50 records, and assessments of all five kinds.
+- Claude completed T-023B checks on 2026-11-17 and repeated them after migrations on 2026-11-21: owner, `anon`, user without a profile, role change, the board grade/refusal rule, and `ops.keepalive()` for `anon`. Two-teacher isolation was not tested (T-050). The report is `docs/RLS_TEST_REPORT.md` on `main` after PR #9.
+- The Security Advisor reports only the compromised-password-protection warning. Data API exposes `graphql_public` and `public`; automatic exposure of new tables is disabled; `ops` has not yet been added to exposed schemas.
+- PR #7 was merged and the GitHub Pages deployment workflow succeeded with Source = GitHub Actions. PR #8 merged T-031 code; live sign-in has not been checked. PR #9 merged the keep-alive migration, which is applied to the live database.
+- T-006 owner steps remain: create `SJ_SUPABASE_URL` and `SJ_SUPABASE_ANON_KEY` repository variables, expose `ops` in Data API, run the keep-alive workflow manually, and set Supabase Auth `Site URL` / Redirect URLs to the Pages address.
+
 ## 2026-11-14 — T-007 and T-023A completed
 - The owner's Supabase Auth screenshot verified that new-user signup, manual linking, and anonymous sign-ins are disabled, email confirmation is enabled, and Save is inactive. The Data API screenshot showed `graphql_public` and `public` exposed, with `private` not exposed. The owner disabled “Automatically expose new tables”.
 - School Journal pull request #2 was merged after Claude's verdict ACCEPTED at head `06dddbb`. Claude applied migration `20261101232000_security_hardening` to live project `dtpyvyedcptdkdsowmco` through the Supabase integration. Migration history version: `20261114200113`.
