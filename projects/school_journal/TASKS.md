@@ -2,7 +2,7 @@
 
 Priority: **class journal first**, attendance and meals second. Everything must be free. Single user for now, ready for several teachers; repository stays public.
 Status legend: PLANNED, IN PROGRESS, REVIEW, ACCEPTED, REWORK, BLOCKED, DEFERRED, DONE, PARTIAL.
-Last reviewed by Claude: 2026-11-21.
+Last reviewed by Claude: 2026-11-23.
 
 ## Phase 0 — Decisions and foundation
 | ID | Who | Task | Status |
@@ -55,3 +55,31 @@ Last reviewed by Claude: 2026-11-21.
 | T-041 | Claude + Grok | Security and personal-data review | PLANNED |
 | T-042 | Owner | Pilot in one class | PLANNED |
 | T-043 | Grok | Free backup/export | PARTIAL (docs on branch `grok/T-023-docs`) |
+
+## Schedule and navigation (approved 2026-11-22)
+Schedule-model review: ACCEPTED as input to DATA_CONTRACT v1.2. T-070 and later migrations begin after v1.2 is approved.
+
+| Stage | ID | Who | Task | Status |
+|---|---|---|---|---|
+| A | T-069 | Grok | Add `assessments.in_journal` | ACCEPTED (branch `grok/T-069`; pull request not opened; not applied) |
+| A | T-031L | Owner | Live sign-in check | PLANNED |
+| A | T-060 | Codex | Navigation to journals | ACCEPTED (PR #11) |
+| A | T-062 | Codex | Lesson-to-journal link | ACCEPTED (PR #12) |
+| A | T-063 | Codex | Add a lesson manually | ACCEPTED (PR #13) |
+| A | T-032 | Codex | Lesson window save | REWORK (PR #14) |
+| A | T-061 | Codex | Journal grid | PLANNED (waits for T-069) |
+| A | T-064 | Codex | Student-by-lesson dialog | PLANNED (waits for T-069) |
+| A | T-033 | Codex | Edit/delete lessons and export | PLANNED |
+| B | T-070 | Grok | Terms, bells, and calendar | PLANNED |
+| B | T-071 | Grok | Weekly schedule and resolvers | PLANNED |
+| B | T-072 | Grok | Lesson status/type, generation, and continuous number | PLANNED |
+| B | T-073 | Grok | Lesson plan and topic shifting | PLANNED |
+| B | T-074 | Codex | Home screen with today's schedule | PLANNED |
+| B | T-075 | Codex | Week view | PLANNED |
+| B | T-076 | Codex | Lesson sequence view | PLANNED |
+| B | T-077 | Codex | Lesson-plan editor | PLANNED |
+| C | T-078 | Grok | Day exceptions | PLANNED |
+| C | T-079 | Codex | Day-exceptions editor | PLANNED |
+| C | T-080 | Codex | Schedule setup screens | PLANNED |
+| C | T-081 | Claude | DATA_CONTRACT v1.2 | PLANNED |
+

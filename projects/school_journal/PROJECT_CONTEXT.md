@@ -71,3 +71,9 @@ The whole project must run at no cost (owner decision, 2026-10-31): no paid plan
 - Children's personal data: **only synthetic test data** in the repository and in any AI chat. Roles and RLS from day one. Keep data minimal.
 - No passwords, API keys, tokens or service-role keys in the repository or the Hub.
 - Do not invent project state; use VERIFIED / PLANNED / PARTIAL / BLOCKED labels.
+
+## Daily work area requirements (owner, 2026-11-21)
+The home screen will show today's schedule, with a week view, lesson sequence per class and subject, and journal grid navigated through Journals → Class → Subject → Journal. Generate lessons for a whole semester from the weekly schedule. There is one bell schedule per semester, with per-date exceptions such as shortened lessons; semesters are the only periods. A non-teaching-day table (holidays and breaks within or between semesters) prevents lesson creation. Cancelled and replaced lessons do not count in the continuous lesson number. Only the teacher chooses which assessment enters a journal cell, or chooses none; control and independent assessments highlight their date columns.
+
+When the owner is replaced, remove the lesson from the owner's schedule but keep it visible as replaced; move its planned topic to the next planned lesson in that journal and shift later topics one lesson later. An extra lesson in the same journal takes the next planned topic and shifts later topics one lesson earlier. A lesson the owner teaches for another teacher is an extra lesson with its own topic outside the plan, recorded in that class-and-subject journal under the owner by default, pending confirmation; consider a "conducted by" field with T-050. Never shift held lessons.
+
