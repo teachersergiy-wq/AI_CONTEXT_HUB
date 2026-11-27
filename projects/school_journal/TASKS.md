@@ -43,7 +43,7 @@ Last reviewed by Claude: 2026-11-23.
 |---|---|---|
 | [T-030](tasks/T-030.md) | PWA skeleton on mock data | DONE (PR #3 merged 2026-11-15; CI passed) |
 | T-031 | MVP-1 journal: journals list and lesson dates from Supabase | IN PROGRESS (code merged in PR #8; live sign-in check not yet performed) |
-| T-032 | MVP-1 journal: lesson window with the characteristics, `н`, save through RPC | PLANNED (write through RPC `save_lesson_record`) |
+| T-032 | MVP-1 journal: lesson window with the characteristics, `н`, save through RPC | REWORK (PR #14; fixes submitted for Claude re-review) |
 | T-033 | MVP-1 journal: edit/delete lesson, context menu, assessments, export | BLOCKED until T-032 |
 | T-034 | MVP-2: attendance submission | DEFERRED |
 | T-035 | MVP-2: meals and reports | DEFERRED |
